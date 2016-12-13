@@ -1,0 +1,48 @@
+body {
+    background-image: url("fond.jpg");
+    margin: 0 auto;
+    background-size: cover;
+}
+
+h1{
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 17px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+//boutton
+.w3-container {
+    width:150px;
+    margin-right: 500px;
+    padding-right: 500px;
+}

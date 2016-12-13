@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<link rel="stylesheet" type="text/css" href="CSS/Page_addAccount.css">
+        <title>Page d'inscription</title>
+	</head>
+	<body>
+			<ul>
+ 			  <li><a href="Page_daccueil.html">Accueil</a></li>
+			  <li><a href="">a trouver</a></li>
+			  <li><a href="Page_addAccount">Connexion</a></li>
+			  <li style="float:right"><a class="active" href="#about">A propos</a></li>
+			</ul>
+
+            <h1>Création d'un compte !</h1>
+
+			<div class="container">
+
+            <!--<a href="../PHP/redirection.php?search=home"><i class="fa fa-home" aria-hidden="true"></i> Retourner à l'accueil</a>
+            <h2><i class="fa fa-address-card-o" aria-hidden="true"></i> Ajout d'une fiche </h2>-->
+
+                <div class="input">
+                    <label for="nom">Nom : </label>
+                    <input type="text" id="nom" name="nom" placeholder="Entrez le nom" required />
+                </div>
+
+                <div class="input">
+                    <label for="prenom">Prénom : </label>
+                    <input type="text" id="prenom" name="prenom" placeholder="Entrez le prénom" required />
+
+                </div>
+
+                <div class="input">
+                    <label for="email">Email : </label>
+                    <input type="email" id="email" name="email" placeholder="Entrez l'adresse Email" required/>
+                </div>
+
+                <div class="input">
+                    <label for="MDP">Mot de passe : </label>
+                    <input type="password" id="MDP" name="MDP" placeholder="Entrez votre mot de passe" required/>
+                </div>
+
+
+                <div>
+                    <a class = "button" href = "../PHP/redirection.php?search=home">ANNULER</a>
+                    <input type="button" name="submit_addContact" value="VALIDER" onclick="addContactAjax()">
+                </div>
+
+                <div id="result" class="warning"></div>
+
+        </div>
+
+
+	</body>
+</html>
