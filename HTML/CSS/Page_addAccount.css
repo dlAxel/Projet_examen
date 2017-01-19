@@ -41,7 +41,7 @@ li a:hover:not(.active) {
 .h1 {
     text-align: center;
     font-family: "lemon-milk";
-    color: red;
+    color: black;
 }
 
 .w3-container {
@@ -56,5 +56,6 @@ li a:hover:not(.active) {
 }
 
 .centerdiv {
-    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
 }

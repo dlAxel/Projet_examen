@@ -9,7 +9,7 @@
 	if (empty ($name) || empty ($_POST['email']) || empty ($_POST['mdp']) || empty ($_POST['confirmMdp'])) {
 
         echo 'Veuillez renseigner tous les champs';
-        return;
+        die();
     }
 
     if ($_POST['mdp'] == $_POST['confirmMdp']) {
@@ -22,10 +22,8 @@
 
     } else {
 
-        echo 'Veuiller retaper votre mod de passe';
-    }
-	
-	
+        echo 'Veuiller retaper votre mot de passe';
+    }	
 
 	function createAccount($inLName, $inFName, $inMail, $inPassword) {
 		global $bdd;
@@ -34,7 +32,9 @@
 		$hash = password_hash ($inPassword, PASSWORD_BCRYPT);
 		$query = "INSERT INTO `compte`(`nom`, `prenom`, `email`, `mdp`) VALUES (".$bdd->quote($inLName).", ".$bdd->quote($inFName).", ".$bdd->quote($inMail).", ".$bdd->quote($hash).")";
 		
-		exec($query);
-		header("Location: ../HTML/page_connexion.html");
+//echo '<span style="color: yellow">'.$query.'</span>';
+
+		$bdd->exec($query);
+		//header("Location: ../HTML/page_connexion.html");
 	}
 	
