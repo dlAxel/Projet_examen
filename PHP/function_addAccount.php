@@ -1,8 +1,6 @@
 <?php
 
 	include('config.php');
-	//header('location: ../HTML/Page_addAccount.html');
-
 
 	$name = ucfirst(strtolower($_POST['nom']))." ". ucfirst(strtolower($_POST['prenom']));
 
@@ -32,8 +30,6 @@
 		$hash = password_hash ($inPassword, PASSWORD_BCRYPT);
 		$query = "INSERT INTO `compte`(`nom`, `prenom`, `email`, `mdp`) VALUES (".$bdd->quote($inLName).", ".$bdd->quote($inFName).", ".$bdd->quote($inMail).", ".$bdd->quote($hash).")";
 		
-//echo '<span style="color: yellow">'.$query.'</span>';
-
 		$bdd->exec($query);
 		//header("Location: ../HTML/page_connexion.html");
 	}

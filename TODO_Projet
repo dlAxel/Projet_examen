@@ -1,15 +1,9 @@
-Page principale 
-Page d'inscription
-Page de login 
+Page principale - en cour 
+Page d'inscription - en cour
+Page de login - en cour 
 un Menu principale 
 
 -----------------------------------
-Base de données 
-hash MDP 
-
------------------------------------
-
-
 
 Accèes au fonction du projet 
 
@@ -26,4 +20,17 @@ Page Bonus jeu pierre feuille ciseaux
 
 -----------------------------------
 
-Parti mobile a voir un peu plus tard 
+réadaptation avec xdk intel 
+-----------------------------------
+en cour a corrigé : 
+
+page d'acceuil = image de fond adapté et faire marcher bouton 
+page addAccount = redirection et si champ pour retaper le mot de passe ne correspond pas a celui marqué afficher une erreur 
+
+------------------------------------
+
+tache réalisé 
+
+Base de données - fait
+hash MDP - fait 
+

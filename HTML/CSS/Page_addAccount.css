@@ -1,6 +1,7 @@
 body {
     background-image: url("addAccount.jpg");
-    margin: 0 auto;
+    
+    text-align: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -56,6 +57,6 @@ li a:hover:not(.active) {
 }
 
 .centerdiv {
-    margin-right: 50px;
     text-align: center;
+    margin: 0 auto;
 }
