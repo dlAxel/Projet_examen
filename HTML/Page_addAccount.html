@@ -4,53 +4,104 @@
 		<meta charset='utf-8'>
 		<link rel="stylesheet" type="text/css" href="CSS/Page_addAccount.css">
         <title>Page d'inscription</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 	</head>
 	<body>
 			<ul>
  			  <li><a href="Page_daccueil.html">Accueil</a></li>
-			  <li><a href="">a trouver</a></li>
-			  <li><a href="Page_addAccount">Connexion</a></li>
+			  <li><a href="Page_addAccount.html">Inscription</a></li>
+			  <li><a href="Page_Connexion.html">Connexion</a></li>
 			  <li style="float:right"><a class="active" href="#about">A propos</a></li>
 			</ul>
-
-            <h1>Création d'un compte !</h1>
-
-			<div class="container">
 
             <!--<a href="../PHP/redirection.php?search=home"><i class="fa fa-home" aria-hidden="true"></i> Retourner à l'accueil</a>
             <h2><i class="fa fa-address-card-o" aria-hidden="true"></i> Ajout d'une fiche </h2>-->
 
-                <div class="input">
-                    <label for="nom">Nom : </label>
-                    <input type="text" id="nom" name="nom" placeholder="Entrez le nom" required />
-                </div>
+        <h1 class="h1">Création d'un compte !</h1>
+        <form action="../PHP/function_addAccount.php" method="POST">
+          <div id="centerdiv">
+                    <table id="table-add-file">
 
-                <div class="input">
-                    <label for="prenom">Prénom : </label>
-                    <input type="text" id="prenom" name="prenom" placeholder="Entrez le prénom" required />
+                        <tr class="align">
+                            <td class="form-add-user"> <label for="nom">Nom : </label> </td>
+                                <td>
+                                    <input type="text" id="nom" name="nom" placeholder="Entrez le nom" required /><br>
+                                </td>
+                                    </tr>
 
-                </div>
+                                    <tr class="align">
+                            <td class="form-add-user"> <label for="prenom">Prénom : </label> </td>
+                                <td>
+                                   <input type="text" id="prenom" name="prenom" placeholder="Entrez le prénom" required /><br>
+                                </td>
+                                    </tr>
 
-                <div class="input">
-                    <label for="email">Email : </label>
-                    <input type="email" id="email" name="email" placeholder="Entrez l'adresse Email" required/>
-                </div>
+                                    <tr class="align">
+                            <td class="form-add-user"> <label for="email">Email : </label> </td>
+                                <td>
+                                    <input type="email" id="email" name="email" placeholder="Entrez l'adresse Email" required/><br>
+                                </td>
+                                    </tr>
 
-                <div class="input">
-                    <label for="MDP">Mot de passe : </label>
-                    <input type="password" id="MDP" name="MDP" placeholder="Entrez votre mot de passe" required/>
-                </div>
+                                    <tr class="align">
+                            <td class="form-add-user"> <label for="mdp">Mot de passe : </label> </td>
+                                <td>
+                                    <input type="password" id="mdp" name="mdp" placeholder="Entrez votre mot de passe" required/><br>
+                                </td>
+                                    </tr>
 
+                                    <tr class="align">
+                            <td class="form-add-user"> <label for="confirmMDP">Retaper votre mot de passe : </label> </td>
+                                <td>
+                                    <input type="password" id="confirmMDP" name="confirmMDP" placeholder="Confirmez votre mot de passe" required/>
+                                </td>
+                                    </tr>
+                    </table>
 
-                <div>
-                    <a class = "button" href = "../PHP/redirection.php?search=home">ANNULER</a>
-                    <input type="button" name="submit_addContact" value="VALIDER" onclick="addContactAjax()">
-                </div>
+                    </div>
 
-                <div id="result" class="warning"></div>
+        <div id="result" class="warning"></div>
 
+        <div class="w3-container">
+            <button class="w3-btn w3-hover-red" input type="button" name="connexion" onclick="addAccountAjax()">Valider</button>
+            <button class="w3-btn w3-hover-red" input type="button" name="inscription" href="Page_daccueil.html" >Annuler</button>
+        </form>
         </div>
+            <script>
+        
+                function addAccountAjax() {
+                    
+                    var nom = document.getElementById("nom").value;
+                    var prenom = document.getElementById("prenom").value;
+                    var email = document.getElementById("email").value;
+                    var pass = document.getElementById("mdp").value;
+                    var confirmPass = document.getElementById("confirmMDP").value;
+                                
+                    
+                    var xhttp = new XMLHttpRequest();
+                    
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.getElementById("result").innerHTML = this.responseText;
+                            document.getElementById("nom").value = "";
+                            document.getElementById("prenom").value = "";
+                            document.getElementById("email").value = "";
+                            document.getElementById("mdp").value = "";
+                            document.getElementById("confirmMDP").value = "";  
+                        }               
+                    };
+                    
+                    if (pass == confirmPass) {
 
+                        xhttp.open("POST", "../PHP/function_addAccount.php", true);
+                        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        xhttp.send("nom="+nom+"&prenom="+prenom+"&email="+email+"&mdp="+pass+"&confirmMdp="+confirmPass);
+                    }
+
+                }                                           
+                    
+        </script>
 
 	</body>
 </html>

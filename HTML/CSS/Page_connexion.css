@@ -1,3 +1,11 @@
+.centerdiv {
+    text-align: center;
+}
+
+.h1 {
+    text-align: center;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -8,20 +16,28 @@ ul {
 
 li {
     float: left;
+    background-color: 
 }
 
 li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 15px 17px;
     text-decoration: none;
 }
 
 li a:hover:not(.active) {
-    background-color: #111;
+    background-color: #e60000;
 }
 
 .active {
-    background-color: #4CAF50;
+    background-color: #ff0000;
 }
+
+.w3-container {
+    text-align: center;
+    font-family: "lemon-milk"; 
+}
+
+

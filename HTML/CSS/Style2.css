@@ -4,12 +4,20 @@ body {
     background-size: cover;
 }
 
-h1{
+@font-face {
+    font-family: "lemon-milk";
+    src: url(LemonMilk.otf);
+}
+
+h1 {
     text-align: center;
+    font-family: "lemon-milk";
 }
 
 p {
     text-align: center;
+    font-family: "lemon-milk";
+    color: white;
 }
 
 ul {
@@ -22,6 +30,7 @@ ul {
 
 li {
     float: left;
+    background-color: 
 }
 
 li a {
@@ -33,16 +42,15 @@ li a {
 }
 
 li a:hover:not(.active) {
-    background-color: #111;
+    background-color: #e60000;
 }
 
 .active {
-    background-color: #4CAF50;
+    background-color: #ff0000;
 }
 
-//boutton
 .w3-container {
-    width:150px;
-    margin-right: 500px;
-    padding-right: 500px;
+    text-align: center;
+    font-family: "lemon-milk"; 
 }
+

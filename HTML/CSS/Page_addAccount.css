@@ -14,7 +14,7 @@ ul {
 }
 
 li {
-    float: left;
+    float: left;    
 }
 
 li a {
@@ -26,23 +26,35 @@ li a {
 }
 
 li a:hover:not(.active) {
-    background-color: #111;
+    background-color: #e60000;
 }
 
 .active {
-    background-color: #4CAF50;
+    background-color: #ff0000;
 }
 
-.input {
+@font-face {
+    font-family: "lemon-milk";
+    src: url(LemonMilk.otf);
+}
+
+.h1 {
     text-align: center;
-    font-family: "lemon_milk";
+    font-family: "lemon-milk";
+    color: red;
 }
 
-h1 {
+.w3-container {
     text-align: center;
     font-family: "lemon-milk";
 }
 
-.div {
-    text-align: center;
+.align {
+    font-family: "lemon-milk";
+    text-align: right;
+    margin-left: 100px;
+}
+
+.centerdiv {
+    margin-left: 50px;
 }
