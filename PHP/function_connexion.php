@@ -10,19 +10,16 @@
 	//verify the textfield are empty if not empty he execute the function 
 	if (empty ($email) || empty($mdp)) {
 		die('Remplie tout les champs pout te connecter.');
-	} else {
+	} 
 		connexion();
-	}
 
 	function connexion() {
 		global $bdd;
 		$query = null;
 
 		$query = "SELECT `email`, `mdp` FROM `compte`";
+		if ($result === )
 		exec($query);
 	}
-
-		
-
 
 //SELECT `email`, `mdp` FROM `compte`
