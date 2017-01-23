@@ -1,9 +1,21 @@
-.centerdiv {
+#table-add-file {
+    margin-left: 450px;
     text-align: center;
+    font-family: "lemon-milk";
 }
 
 .h1 {
     text-align: center;
+    font-family: "lemon-milk";
+}
+
+@font-face {
+    font-family: "lemon-milk";
+    src: url(LemonMilk.otf);
+}
+
+body {
+    background-image: url("page_connexion.jpg");
 }
 
 ul {

@@ -14,27 +14,30 @@
 			<li><a href="page_connexion.html">Connexion</a></li>
 			<li style="float:right"><a class="active" href="A_propos.html">A propos</a></li>
 		</ul>
-			<h1 class="h1">Veuiller vous Connecter !</h1>
+			<h1 class="h1">Veuillez vous Connecter !</h1>
 
 			 <form action="../PHP/function_connexion.php" method="POST">
-          <div id="centerdiv">
-                        <table id="table-add-file">
+            <div id="centerdiv">
+                <table id="table-add-file">
 
-                            <tr class="align">
-                                <td class="form-add-user"> <label for="email">Email : </label> </td>
-                                    <td>
-                                        <input type="text" id="email" name="email" placeholder="Entrez votre mail" required /><br>
-                                    </td>
-                                        </tr>
+                    <tr class="align">
+                        <td class="form-add-user"> <label for="email">Email : </label> </td>
+                            <td>
+                                <input type="text" id="email" name="email" placeholder="Entrez votre mail" required /><br>
+                            </td>
+                              </tr>
 
-                                        <tr class="align">
-                                <td class="form-add-user"> <label for="mot de passe">Mot de passe : </label> </td>
-                                    <td>
-                                       <input type="text" id="mot de passe" name="mot de passe" placeholder="Entrez votre mot de passe" required /><br>
-                                    </td>
-                                        </tr>
-                        </table>
-
-                    </div>
+                    <tr class="align">
+                        <td class="form-add-user"> <label for="mot de passe">Mot de passe : </label> </td>
+                          <td>
+                            <input type="text" id="mdp" name="mdp" placeholder="Entrez votre mot de passe" required /><br>
+                          </td>
+                            </tr>
+                </table>
+            </div>
+            <div class="w3-container">
+                <button class="w3-btn w3-hover-red" input type="submit" name="connexion" value="Page_login">Connexion</button>
+                <button class="w3-btn w3-hover-red" input type="submit" name="inscription" >Annuler</button>
+            </div>
 	</body>
 </html>

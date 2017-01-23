@@ -46,7 +46,7 @@ li a:hover:not(.active) {
 }
 
 .w3-container {
-    text-align: center;
+    margin-left: 0px;
     font-family: "lemon-milk";
 }
 
@@ -58,5 +58,8 @@ li a:hover:not(.active) {
 
 .centerdiv {
     text-align: center;
-    margin: 0 auto;
+}
+
+#table-add-file {
+    margin-left: 345px;
 }
