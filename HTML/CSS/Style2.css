@@ -5,14 +5,14 @@
 
 body {
     background-image: url("fond.jpg");
-    margin: 0 auto;
     background-size: cover;
     text-align: center;
     font-family: "lemon-milk";
     background-repeat: no-repeat;
+
 }
 
-.h1 {
+.container {
     font-family: "lemon-milk";
 }
 

@@ -31,6 +31,7 @@
 		$query = "INSERT INTO `compte`(`nom`, `prenom`, `email`, `mdp`) VALUES (".$bdd->quote($inLName).", ".$bdd->quote($inFName).", ".$bdd->quote($inMail).", ".$bdd->quote($hash).")";
 		
 		$bdd->exec($query);
-		//header("Location: ../HTML/page_connexion.html");
+		header("Location: ../HTML/page_connexion.html");
+		exit(0);
 	}
 	
