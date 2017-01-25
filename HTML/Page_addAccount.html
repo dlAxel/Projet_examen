@@ -15,9 +15,6 @@
 			  <li style="float:right"><a class="active" href="A_propos.html">A propos</a></li>
 			</ul>
 
-            <!--<a href="../PHP/redirection.php?search=home"><i class="fa fa-home" aria-hidden="true"></i> Retourner à l'accueil</a>
-            <h2><i class="fa fa-address-card-o" aria-hidden="true"></i> Ajout d'une fiche </h2>-->
-
         <h1 class="h1">Création d'un compte !</h1>
         <form action="../PHP/function_addAccount.php" method="POST">
           <div id="centerdiv">
@@ -65,7 +62,8 @@
 
         <div class="w3-container">
             <button class="w3-btn w3-hover-red" input type="button" name="connexion" onclick="addAccountAjax()">Valider</button>
-            <button class="w3-btn w3-hover-red" input type="button" name="inscription" href="Page_daccueil.html" >Annuler</button>
+            <a href="Page_daccueil.html">
+            <button class="w3-btn w3-hover-red" input type="button" name="inscription"  >Annuler</button></a>
         </form>
         </div>
             <script>

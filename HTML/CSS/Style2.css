@@ -1,24 +1,24 @@
 @font-face {
-    font-family: "lemon-milk";
-    src: url(LemonMilk.otf);
+    font-family: "LinLibertine_RB";
+    src: url(LinLibertine_RB.ttf);
 }
 
 body {
     background-image: url("fond.jpg");
+    background-attachment: fixed;
     background-size: cover;
     text-align: center;
-    font-family: "lemon-milk";
+    font-family: "LinLibertine_RB";
     background-repeat: no-repeat;
-
 }
 
-.container {
-    font-family: "lemon-milk";
+.h1 {
+    font-family: "LinLibertine_RB";
 }
 
 p {
     text-align: center;
-    font-family: "lemon-milk";
+    font-family: "LinLibertine_RB";
     color: black;
 }
 
@@ -53,6 +53,5 @@ li a:hover:not(.active) {
 
 .w3-container {
     text-align: center;
-    font-family: "lemon-milk"; 
+    font-family: "LinLibertine_RB"; 
 }
-
