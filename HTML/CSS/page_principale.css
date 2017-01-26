@@ -1,0 +1,21 @@
+#sidebar {
+height : 100%;
+width: 25%;
+position: fixed; 
+background-color :#4d4d4d ;
+top: 0;
+left: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    margin-top: 100%;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}

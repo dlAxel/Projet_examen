@@ -1,47 +1,47 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset='utf-8'>
-		<link rel="stylesheet" type="text/css" href="CSS/Page_connexion.css">
-		<title>Page de connexion</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-	</head>
-	<body>
-		<ul>
- 			<li><a href="Page_daccueil.html">Accueil</a></li>
-			<li><a href="Page_addAccount.html">Inscription</a></li>
-			<li><a href="page_connexion.html">Connexion</a></li>
-			<li style="float:right"><a class="active" href="A_propos.html">A propos</a></li>
-		</ul>
-			<h1 class="h1">Veuillez vous Connecter !</h1>
+    <head>
+      <meta charset='utf-8'>
+      <link rel="stylesheet" type="text/css" href="CSS/Page_connexion.css">
+      <title>Page de connexion</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    </head>
+    <body>
+      <ul>
+        <li><a href="Page_daccueil.html">Accueil</a></li>
+        <li><a href="Page_addAccount.html">Inscription</a></li>
+        <li><a href="page_connexion.html">Connexion</a></li>
+        <li style="float:right"><a class="active" href="A_propos.html">A propos</a></li>
+    </ul>
+    <h1 class="h1">Veuillez vous Connecter !</h1>
 
-			 <form action="../PHP/function_connexion.php" method="POST">
-            <div id="centerdiv">
-                <table id="table-add-file">
+    <form action="../PHP/function_connexion.php" method="POST">
+        <div id="centerdiv">
+            <table id="table-add-file">
 
-                    <tr class="align">
-                        <td class="form-add-user"> <label for="email">Email : </label> </td>
-                            <td>
-                                <input type="text" id="email" name="email" placeholder="Entrez votre mail" required /><br>
-                            </td>
-                              </tr>
+                <tr class="align">
+                    <td class="form-add-user"> <label for="email">Email : </label> </td>
+                    <td>
+                        <input type="text" id="email" name="email" placeholder="Entrez votre mail" required /><br>
+                    </td>
+                </tr>
 
-                    <tr class="align">
-                        <td class="form-add-user"> <label for="mot de passe">Mot de passe : </label> </td>
-                          <td>
-                            <input type="password" id="mdp" name="mdp" placeholder="Entrez votre mot de passe" required /><br>
-                          </td>
-                            </tr>
-                </table>
-            </form>
-            </div>
-            <div class="w3-container">
-                <button class="w3-btn w3-hover-red" input type="submit" name="connexion">Connexion</button>
-                
-                
-                <a href="Page_daccueil.html">
-                <button class="w3-btn w3-hover-red" input type="submit" name="inscription" >Annuler</button></a>
-            </div>
-	</body>
+                <tr class="align">
+                    <td class="form-add-user"> <label for="mot de passe">Mot de passe : </label> </td>
+                    <td>
+                        <input type="password" id="mdp" name="mdp" placeholder="Entrez votre mot de passe" required /><br>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="w3-container">
+            <button class="w3-btn w3-hover-red" input type="submit" name="connexion">Connexion</button>
+        </form>
+
+        <a href="Page_daccueil.html">
+            <button class="w3-btn w3-hover-red" input type="button" name="inscription" >Annuler</button></a>
+        </div>
+    </body>
 </html>
