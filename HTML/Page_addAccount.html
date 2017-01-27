@@ -23,35 +23,35 @@
                         <tr class="align">
                             <td class="form-add-user"> <label for="nom">Nom : </label> </td>
                                 <td>
-                                    <input type="text" id="nom" name="nom" placeholder="Entrez le nom" required /><br>
+                                    <input type="text" id="nom" name="nom" placeholder="Entrez le nom"/><br>
                                 </td>
                                     </tr>
 
                                     <tr class="align">
                             <td class="form-add-user"> <label for="prenom">Prénom : </label> </td>
                                 <td>
-                                   <input type="text" id="prenom" name="prenom" placeholder="Entrez le prénom" required /><br>
+                                   <input type="text" id="prenom" name="prenom" placeholder="Entrez le prénom"/><br>
                                 </td>
                                     </tr>
 
                                     <tr class="align">
                             <td class="form-add-user"> <label for="email">Email : </label> </td>
                                 <td>
-                                    <input type="email" id="email" name="email" placeholder="Entrez l'adresse Email" required/><br>
+                                    <input type="email" id="email" name="email" placeholder="Entrez l'adresse Email"/><br>
                                 </td>
                                     </tr>
 
                                     <tr class="align">
                             <td class="form-add-user"> <label for="mdp">Mot de passe : </label> </td>
                                 <td>
-                                    <input type="password" id="mdp" name="mdp" placeholder="Entrez votre mot de passe" required/><br>
+                                    <input type="password" id="mdp" name="mdp" placeholder="Entrez votre mot de passe"/><br>
                                 </td>
                                     </tr>
 
                                     <tr class="align">
                             <td class="form-add-user"> <label for="confirmMDP">Retaper votre mot de passe : </label> </td>
                                 <td>
-                                    <input type="password" id="confirmMDP" name="confirmMDP" placeholder="Confirmez votre mot de passe" required/>
+                                    <input type="password" id="confirmMDP" name="confirmMDP" placeholder="Confirmez votre mot de passe"/>
                                 </td>
                                     </tr>
                     </table>
@@ -81,12 +81,21 @@
                     
                     xhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
-                            document.getElementById("result").innerHTML = this.responseText;
-                            document.getElementById("nom").value = "";
-                            document.getElementById("prenom").value = "";
-                            document.getElementById("email").value = "";
-                            document.getElementById("mdp").value = "";
-                            document.getElementById("confirmMDP").value = "";  
+                            var err=parseInt(this.responseText, 10);
+                            if (err === 1) {
+                                document.getElementById("result").innerHTML = "Veuillez renseigner tous les champs";
+                            } else if (err === 2) {
+                                document.getElementById("result").innerHTML = "Veuiller retaper votre mot de passe";
+                            } else {
+                                document.getElementById("nom").value = "";
+                                document.getElementById("prenom").value = "";
+                                document.getElementById("email").value = "";
+                                document.getElementById("mdp").value = "";
+                                document.getElementById("confirmMDP").value = "";  
+                                window.location.href="../HTML/page_connexion.html";
+                            }
+                            
+                            
                         }               
                     };
                     

@@ -1,3 +1,9 @@
+@font-face {
+font-family: "LinLibertine_RB";
+   src: url(LinLibertine_RB.ttf);
+   font-size: large;
+}
+
 #sidebar {
 height : 100%;
 width: 25%;
@@ -9,10 +15,23 @@ left: 0;
 
 h1 {
     text-align: center;
+    font-family: "LinLibertine_RB";
 }
 
 ul {
     margin-top: 100%;
+}
+
+.deuxieme {
+    border-top : 1px solid #000; 
+}
+
+.troisieme {
+    border-top : 1px solid #000; 
+}
+
+.quatrieme {
+    border-top : 1px solid #000; 
 }
 
 @media screen and (max-height: 450px) {
