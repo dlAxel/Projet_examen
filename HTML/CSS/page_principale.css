@@ -18,23 +18,81 @@ h1 {
     font-family: "LinLibertine_RB";
 }
 
-ul {
-    margin-top: 100%;
+.profile {
+    width:5px;
+    border-left:1px solid gray;
+    height:70px;
 }
 
-.deuxieme {
-    border-top : 1px solid #000; 
+ul.form {
+    position:relative;
+    background:#4d4d4d;
+    color: white;
+    width:342px;
+    margin:0;
+    padding:0;
+    list-style: none;
+    overflow:hidden;
+    margin-top: 200px;
+
 }
 
-.troisieme {
-    border-top : 1px solid #000; 
+li:hover {
+    background-color: white;
 }
 
-.quatrieme {
-    border-top : 1px solid #000; 
+.form li {
+    height:50px;
+}
+
+.form li a {
+    width:225px;
+    padding-left:20px;
+    height:50px;
+    line-height:50px;
+    display:block;
+    overflow:hidden;
+    position:relative;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size:14px;
+    color:#686868;
+ 
+    -webkit-transition:all 0.2s linear;
+    -moz-transition:all 0.2s linear;
+    -o-transition:all 0.2s linear;
+    transition:all 0.2s linear;
+}
+ 
+.form i {
+    margin-right:15px;
+    color:#fff;
+ 
+    -webkit-transition:all 0.2s linear;
+    -moz-transition:all 0.2s linear;
+    -o-transition:all 0.2s linear;
+    transition:all 0.2s linear;
+}
+ 
+.form li a:hover i {
+    color:#ea4f35;
 }
 
 @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
+}
+
+/* code of button deconnexion*/
+.btn {
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #2ad110;
+  padding: 10px 20px 10px 20px;
+  
+}
+
+.bouton {
+    
 }
