@@ -21,7 +21,11 @@ body {
     background-position: center;
     height: 100%;
 }
-
+.error {
+    color: red;
+    border:1px solid red;
+    display: none;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -53,5 +57,5 @@ li a:hover:not(.active) {
 
 .w3-container {
     text-align: center;
-    font-family: "LinLibertine_RB"; 
+    font-family: "LinLibertine_RB";
 }

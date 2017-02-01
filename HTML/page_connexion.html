@@ -2,10 +2,10 @@
 <html>
     <head>
       <meta charset='utf-8'>
-      <link rel="stylesheet" type="text/css" href="CSS/Page_connexion.css">
-      <title>Page de connexion</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+        <link rel="stylesheet" type="text/css" href="CSS/Page_connexion.css">
+            <title>Page de connexion</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     </head>
     <body>
       <ul>
@@ -16,7 +16,7 @@
     </ul>
     <h1 class="h1">Veuillez vous Connecter !</h1>
 
-    <form action="../PHP/function_connexion.php" method="POST">
+    <form action="" method="POST">
         <div id="centerdiv">
             <table id="table-add-file">
 
@@ -37,11 +37,45 @@
 
         </div>
         <div class="w3-container">
-            <button class="w3-btn w3-hover-red" input type="submit" name="connexion">Connexion</button>
-        </form>
+            <div id="result" class='error'></div>
+            <button class="w3-btn w3-hover-red" input type="button" name="connexion" onclick="connexionAjax()" >Connexion</button>
 
         <a href="Page_daccueil.html">
             <button class="w3-btn w3-hover-red" input type="button" name="inscription" >Annuler</button></a>
+            <script>
+        
+                    function connexionAjax() {
+                        
+                        var email = document.getElementById("email").value;
+                        var pass = document.getElementById("mdp").value;                                    
+                        
+                        var xhttp = new XMLHttpRequest();
+                        
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                var result= JSON.parse(this.responseText);
+
+                                var err=parseInt(result.err, 10);
+                                if (err > 0) {
+                                    document.getElementById("result").innerHTML = result.message;
+                                    document.getElementById("result").style.display='block';
+                                } else {
+                                    window.location.href="../PHP/page_principale.php";
+                                }
+                                
+                                
+                            }               
+                        };
+                        
+                        if (pass == pass && email == email) {
+
+                            xhttp.open("POST", "../PHP/function_connexion.php", true);
+                            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                            xhttp.send("&email="+email+"&mdp="+pass);
+                        }
+
+                    }                                                   
+            </script>
         </div>
     </body>
 </html>

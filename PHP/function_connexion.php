@@ -1,7 +1,6 @@
 <?php
 
 	session_start();
-	var_dump($_REQUEST);
 	include('config.php');
 
 	$email = filter_var($_POST['email'],FILTER_SANITIZE_STRING);
@@ -9,19 +8,39 @@
 
 	//if the email is empty return a error message
 	if (empty ($email)) {
-		die("Adresse mail non remplie");
+		$toreturn ['err']=1;
+		$toreturn ['message']="Veuiller retaper votre email";
+		echo json_encode($toreturn);
+		exit();
 	}
 	//if the password is empty return a error message
 	if (empty ($mdp)) {
-		die("Mot de passe non valide");
+		$toreturn ['err']=2;
+		$toreturn ['message']="Mot de passe non valide";
+
+		echo json_encode($toreturn);
+		exit();
 	}
 
 	//verify the textfield are empty if not empty he execute the function 
 	if (empty ($email) || empty($mdp)) {
-		echo "Remplie tout les champs pour te connecter.";
+		$toreturn ['err']=3;
+		$toreturn ['message']="Remplie tout les champs pour te connecter.";
+		echo json_encode($toreturn);
+		exit();
 	} else {
-		connexion($email, $mdp);
+		$test = connexion($email, $mdp);
+		if ($test) {
+			$toreturn ['err']=4;
+			$toreturn ['message']=$test;
+			echo json_encode($toreturn);
+			exit();
+		}
 	}
+	$toreturn ['err']=0;
+	$toreturn ['message']="";
+	echo json_encode($toreturn);
+	exit();
 
 	function connexion($inEmail, $inMdp) {
 		global $bdd;
@@ -31,18 +50,14 @@
 		$sth = $bdd->query($query);
 		$result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-		if ($_POST === $result) {
-			$bdd->exec($query);
-		}
-
 		if (count($result) == 1) {
 			$test = password_verify($inMdp, $result[0]['mdp']);
 			if ($test) {
-				echo "Mot de passe correct";
-				header("Location: ../HTML/page_principale.html");
-				session_start();
-			} else {
-				echo "Mot de passe incorrect";
-			}	
+				$_SESSION['starttime']= time();
+				session_write_close();
+				return null;
+			} 
 		}
+		return "Mot de passe incorrect";
+
 	}

@@ -1,7 +1,4 @@
-Page principale - en cour 
-Page d'inscription - en cour
-Page de login - en cour 
-un Menu principale 
+ 
 
 -----------------------------------
 
@@ -22,10 +19,9 @@ Page Bonus jeu pierre feuille ciseaux
 
 réadaptation avec xdk intel 
 -----------------------------------
-en cour a corrigé : 
+en cour :
 
-page d'acceuil = image de fond adapté et faire marcher bouton 
-page addAccount = redirection et si champ pour retaper le mot de passe ne correspond pas a celui marqué afficher une erreur 
+Menu principale 
 
 ------------------------------------
 
@@ -33,4 +29,6 @@ tache réalisé
 
 Base de données - fait
 hash MDP - fait 
-
+Page d'accueil - fait 
+Page d'inscription - fait
+Page de login - fait 
