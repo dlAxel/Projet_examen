@@ -4,7 +4,7 @@ include('config.php');
 
 $name = ucfirst(strtolower($_POST['nom']))." ". ucfirst(strtolower($_POST['prenom']));
 
-if (empty ($name) || empty ($_POST['email']) || empty ($_POST['mdp']) || empty ($_POST['confirmMdp'])) {
+if (empty ($_POST['nom']) || empty ($_POST['prenom']) || empty ($_POST['email']) || empty ($_POST['mdp']) || empty ($_POST['confirmMdp'])) {
 
 	//echo 'Veuillez renseigner tous les champs';
 	echo "1";
