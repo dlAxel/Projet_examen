@@ -19,6 +19,7 @@ h1 {
 }
 
 .profile {
+    border-top : 1px solid #000; 
     width:5px;
     border-left:1px solid gray;
     height:70px;
