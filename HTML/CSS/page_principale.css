@@ -83,12 +83,20 @@ li:hover {
 }
 
 /* code of button deconnexion*/
-.btn {
+.bouton {
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
   background: #2ad110;
   padding: 10px 77px 10px 77px;
-  border : solid 1px #2ad110;
-  
+  border : solid 1px #2ad110;  
+}
+
+.button {
+    text-decoration: none;
+    color: white;
+}
+
+.image {
+    border-radius: 100%;
 }

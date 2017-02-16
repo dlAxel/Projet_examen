@@ -53,7 +53,7 @@
 		if (count($result) == 1) {
 			$test = password_verify($inMdp, $result[0]['mdp']);
 			if ($test) {
-				$_SESSION['starttime']= time();
+				$_SESSION['starttime']= time(5);
 				session_write_close();
 				return null;
 			} 
