@@ -20,9 +20,11 @@
 				</div>
 
 		<img src="Membres/Avatars" class="" width="150" />
-		?>
-		<label>Avatar :</label>
-		<input type="file" name="Avatar" />
-
+		
+		<div class='Image'>
+			<label>Avatar :</label>
+			<input type="file" name="Avatar" />
+		</div>
+		
 	</body>
 </html>

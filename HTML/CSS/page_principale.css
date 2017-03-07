@@ -1,102 +1,64 @@
-@font-face {
-font-family: "LinLibertine_RB";
-   src: url(LinLibertine_RB.ttf);
-   font-size: large;
+.sidebar1 {
+    background: #F17153;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#808080, #808080, #808080);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#808080, #808080, #808080);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#808080, #808080, #808080);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#808080, #808080, #808080);
+    /* Standard syntax */
+    padding: 0px;
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
-
-#sidebar {
-height : 100%;
-width: 20%;
-position: fixed; 
-background-color :#4d4d4d ;
-top: 0;
-left: 0;
+.logo {
+    max-height: 130px;
 }
-
-h1 {
-    text-align: center;
-    font-family: "LinLibertine_RB";
-}
-
-.profile {
-    border-top : 1px solid #000; 
-    width:5px;
-    border-left:1px solid gray;
-    height:70px;
-}
-
-ul.form {
-    position:relative;
-    background:#4d4d4d;
-    color: white;
-    width:273px;
-    margin:0;
-    padding:0;
-    list-style: none;
-    overflow:hidden;
-    margin-top: 200px;
-}
-
-li:hover {
-    background-color: white;
-}
-
-.form li {
-    height:50px;
-}
-
-.form li a {
-    width:225px;
-    padding-left:20px;
-    height:50px;
-    line-height:50px;
-    display:block;
-    overflow:hidden;
-    position:relative;
-    text-decoration:none;
-    font-size:14px;
-    color:#000000;
- 
-    -webkit-transition:all 0.2s linear;
-    -moz-transition:all 0.2s linear;
-    -o-transition:all 0.2s linear;
-    transition:all 0.2s linear;
-}
- 
-.form i {
-    margin-right:15px;
-    color:#fff;
-
-    -webkit-transition:all 0.2s linear;
-    -moz-transition:all 0.2s linear;
-    -o-transition:all 0.2s linear;
-    transition:all 0.2s linear;
-}
- 
-.form li a:hover i {
-    color:#ea4f35;
-}
-
-@media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
-}
-
-/* code of button deconnexion*/
-.bouton {
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  background: #2ad110;
-  padding: 10px 77px 10px 77px;
-  border : solid 1px #2ad110;  
-}
-
-.button {
-    text-decoration: none;
-    color: white;
-}
-
-.image {
+.logo>img {
+    margin-top: 30px;
+    padding: 3px;
+    border: 3px solid white;
     border-radius: 100%;
 }
+.list {
+    color: #fff;
+    list-style: none;
+    padding-left: 0px;
+}
+.list::first-line {
+    color: rgba(255, 255, 255, 0.5);
+}
+.list> li, h5 {
+    padding: 5px 0px 5px 40px;
+}
+.list>li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-left: 5px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+    padding-left: 35px;
+}.main-content{
+text-align:center;
+}
+.bouton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 66px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.bouton a{
+    color: white;
+    text-decoration: none;
+    }
