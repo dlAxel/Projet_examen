@@ -47,6 +47,7 @@
             	</div>
             	<div class="row">
             		<div class="col-lg-offset-3 col-lg-10">
+                        <p>Adresse de l'évène : </p><textarea name="textarea"rows="5" cols="50"></textarea>
                         <form>
                             <p class="menu">Mineur accepté :</p>
                             <select class="menu">
