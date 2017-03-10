@@ -13,7 +13,9 @@
         
             <div class="sidebar1">
                 <div class="logo">
-                    <a class="Img-clic" href="ton_lien.html"><img src="../HTML/CSS/default.png" class="img-responsive center-block" alt="Logo"></a>
+                    <a class="img-responsive center-block" href="ton_lien.html">
+                        <img src="../HTML/CSS/default.png" class="img-responsive center-block" alt="Logo">
+                    </a>
                 </div>
                 <br>
                 <div class="left-navigation">
@@ -23,7 +25,7 @@
                         <li><a href="Page_creation_evenement.php">Créer un évènement</a></li>
                         <li><a href="page_Map.php">Google map</a></li>
                         <li><a href="#">Amis</a></li>
-                        <li><a href="#">Gym</a></li>
+                        <li><a href="page_profil_membre.php">Profil</a></li>
                         <li><a href="#">Art Class</a></li>
                     </ul>
 
@@ -52,7 +54,7 @@
                                 <option>non
                             </select>
                         </form>
-                        <p>Liste de chose a ramener : </p><textarea name="textarea"rows="10" cols="50"></textarea>                    
+                        <p>Liste de chose a ramener : </p><textarea name="textarea"rows="5" cols="50"></textarea>                    
             		</div>
             	</div>
             </div>  	

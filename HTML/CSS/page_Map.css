@@ -45,9 +45,12 @@
     text-decoration: none;
     font-weight: bolder;
     padding-left: 35px;
-}.main-content{
-text-align:center;
 }
+
+.main-content{
+    text-align:center;
+}
+
 .bouton {
     background-color: #4CAF50;
     border: none;
@@ -67,4 +70,9 @@ text-align:center;
 
 .li {
     color: white;
+}
+
+.map {
+    height: 650px;
+    width: 100%;
 }
