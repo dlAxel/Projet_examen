@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 	<head>
@@ -8,8 +7,7 @@
 		<title>Page principale</title>
 	</head>
 	<body>
-        <form method="post"></form>
-    
+        <form method="POST"></form>
         
             <div class="sidebar1">
                 <div class="logo">
@@ -37,28 +35,55 @@
                 </div>
             </div>
             <div class="container-fluid">
-            	<div class="row">
-            		<div class="col-lg-offset-2 col-lg-10">
+            	
+            		<div class="col-lg-offset-3 col-lg-9">
 
             			<h1 class="titre">Créer votre évènement !</h1>
                         <h2 class="h2">Veuiller renseigner les champs</h2>
+            		</div>
 
-            		</div>
-            	</div>
-            	<div class="row">
-            		<div class="col-lg-offset-3 col-lg-10">
-                        <p>Adresse de l'évène : </p><textarea name="textarea"rows="5" cols="50"></textarea>
-                        <form>
-                            <p class="menu">Mineur accepté :</p>
-                            <select class="menu">
-                                <option>oui
-                                <option>non
-                            </select>
-                        </form>
-                        <p>Liste de chose a ramener : </p><textarea name="textarea"rows="5" cols="50"></textarea>                    
-            		</div>
-            	</div>
-            </div>  	
-    </div>
-</body>
+                    <div class="row">          
+                        <div class="col-lg-offset-2 col-lg-5 center">
+                            <p>Nom de l'évènement : <input type="text" name="Nom">
+
+                            <p>Adresse de l'évènement : <input type="text" name="Adresse">
+
+                            <p>Ville : <input type="text" name="Ville">
+
+                            <p>Code postal : <input type="text" size="5" maxlength="5" name="CP">
+                        </div> 
+                    
+                        <div class="col-lg-5 center">
+                            <p>Date de l'évènement : <input type="date" size="10" name="jour">
+
+                            <p>Heure de début : <input type="text" maxlength="2" size="2" name=""><span>h</span><input type="text" size="2" name="">
+
+                            <p>Heure de fin : <input type="text" maxlength="2" size="2" name=""><span>h</span><input type="text" size="2" name="">
+                        
+                            <form>
+                            
+                                <p class="menu">Mineur accepté :</p>
+                                
+                                    <select class="menu">
+                                        <option>oui
+                                        <option>non
+                                    </select>
+                            
+                            </form>
+                        </div>
+                    </div>
+            <div class="row">
+                <div class="col-lg-offset-2 col-lg-10 center">
+                    <p>Liste de chose a ramener : </p><textarea name="textarea"rows="4" cols="50"></textarea>
+                </div>
+
+                <div class="col-lg-offset-2 col-lg-10 center">
+                    <p>Tenue requise : </p><textarea name="textarea"rows="4" cols="50"></textarea>                     
+                </div>
+                <div class="col-lg-offset-2 col-lg-10 center">
+                    <button type="submit" class="btn btn-success">Envoyer</button>
+                </div>
+            </div>                    	
+        </div>
+    </body>
 </html>

@@ -68,7 +68,7 @@ text-align:center;
     text-decoration: none;
  }
 
-.li {
+.a {
     color: white;
 }
 
@@ -76,10 +76,18 @@ text-align:center;
     text-align: center !important;
 }
 
+h2 {
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
 .menu {
     display: inline-block;
 }
 
-.h2 {
-    text-align: center
+.btn-success {
+    text-align: center;
 }
