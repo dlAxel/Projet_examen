@@ -68,11 +68,20 @@
     text-decoration: none;
     }
 
-.li {
-    color: white;
+.img-responsive .center-block {
+    border-radius: 100%;
 }
 
 .map {
     height: 650px;
     width: 100%;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
 }
