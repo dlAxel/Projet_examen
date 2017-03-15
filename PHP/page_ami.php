@@ -3,13 +3,11 @@
 	<head>
 		<meta charset='utf-8'>
 			<link rel="stylesheet" type="text/css" href="../Vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-			<link rel="stylesheet" type="text/css" href="../HTML/CSS/page_principale.css">
-		<title>Page principale</title>
+			<link rel="stylesheet" type="text/css" href="../HTML/CSS/page_ami.css">
+		<title>Page ami</title>
 	</head>
 	<body>
         <form method="post"></form>
-
-        <h1>Liste d'évènements public</h1>
         
             <div class="sidebar1">
                 <div class="logo">
@@ -30,9 +28,9 @@
                     </ul>
 
                     <br>
-                   	<div class="bouton">
-    					<a href="deconnexion.php" class="button" type="submit">Déconnexion</a>
-    				</div>
+               	<div class="bouton">
+					<a href="deconnexion.php" class="button" type="submit">Déconnexion</a>
+				</div>
                 </div>
             </div>
              <div class="container-fluid">

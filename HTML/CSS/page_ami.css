@@ -45,12 +45,9 @@
     text-decoration: none;
     font-weight: bolder;
     padding-left: 35px;
-}
-
-.main-content{
+}.main-content{
 text-align:center;
 }
-
 .bouton {
     background-color: #4CAF50;
     border: none;
@@ -66,7 +63,7 @@ text-align:center;
 .bouton a{
     color: white;
     text-decoration: none;
- }
+    }
 
 a {
     color: white;
@@ -77,55 +74,6 @@ a:hover {
     color: white;
 }
 
-.titre {
-    text-align: center !important;
-}
-
-h2 {
-    text-align: center;
-    padding-bottom: 0 auto;
-}
-
-.center {
-    text-align: center;
-}
-
-.btn-success {
-    text-align: center;
-}
-
-.text {
-    text-align: right;
-}
-
-.champ {
-    text-align: left;
-    padding: 2px;
-}
-
-.text-2 {
-    text-align: right;
-}
-
-.champ-2 {
-    text-align: left;
-    padding: 2px;
-}
-
-table {
-    width: 100%;
-}
-
-.map {
-    height: 230px;
-    width: 65%;
-    margin-bottom: 10px
-}
-
 .img-responsive .center-block {
     border-radius: 100%;
 }
-
-@media screen and (max-width: 550px) {
-      
-   }

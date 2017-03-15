@@ -34,6 +34,7 @@
                             </ul>
 
                             <br>
+                               
 
                             <div class="bouton">
 				                <a href="deconnexion.php" class="button" type="submit">Déconnexion</a>
@@ -41,6 +42,10 @@
                         </div> <!-- end left-navigation -->
                     </div> <!-- end sidebar1 col-md-2 -->
 
+
+
+ <input type="text" id="lat" value="" />
+                                <input type="text" id="lon" value="" />
                     <div class="container-fluid">
 
                         <div class="row">
@@ -58,12 +63,34 @@
     <script type="text/javascript">
                             
         var map;
+        var mrk;
         function initMap() {
           map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
+            center: {lat: 46.316584181822186, lng: 2.63671875},
             zoom: 8
           });
+            google.maps.event.addListener(map, 'click', function(event) {
+        placeMarker(event.latLng);
+            });
          }
+
+       
+
+function placeMarker(location) {
+    if (!mrk) {
+    mrk = new google.maps.Marker({
+        position: location, 
+        map: map
+    });
+
+} else {
+     mrk.setPosition(location);
+    
+}
+map.panTo( location);
+    document.getElementById('lat').value=location.lat();
+    document.getElementById('lon').value=location.lng();
+}
 
     </script>
 
