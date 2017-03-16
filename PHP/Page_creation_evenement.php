@@ -91,7 +91,7 @@
                                     Date de l'évènement : 
                                 </td>
                                 <td class="champ-2">
-                                    <input type="date" size="10" name="jour">
+                                    <input type="date" size="10" name="Jour">
                                 </td>
                             </tr>
                             <tr>
@@ -99,9 +99,9 @@
                                     Heure de début :
                                 </td> 
                                 <td class="champ-2">
-                                    <input type="text" maxlength="2" size="2" name="heured">
+                                    <input type="text" maxlength="2" size="2" name="Heured">
                                     <span>h</span>
-                                    <input type="text" size="2" name="minuted">
+                                    <input type="text" size="2" name="Minuted">
                                 </td>
                             </tr>
                             <tr>
@@ -109,7 +109,9 @@
                                     Heure de fin :
                                 </td>
                                 <td class="champ-2">
-                                    <input type="text" maxlength="2" size="2" name="heuref"><span>h</span><input type="text" size="2" name="minutef">
+                                    <input type="text" maxlength="2" size="2" name="Heuref">
+                                    <span>h</span>
+                                    <input type="text" size="2" name="Minutef">
                                 </td>
                             </tr>
                             <tr>
@@ -118,7 +120,7 @@
                                     Mineur accepté :
                                 </td>
                                 <td class="champ-2">
-                                    <select name="mineur">
+                                    <select name="Mineur">
                                         <option value="1">Oui</option>
                                         <option value="0">Non</option>
                                     </select>
@@ -131,18 +133,14 @@
                                     Visibilité :
                                 </td>
                                 <td class="champ-2">    
-                                    <select name="type">
+                                    <select name="Type">
                                         <option value="1">Public</option>
                                         <option value="0">Privé</option>
                                     </select>
                                 </td>
-
-
                             </tr>
                         </table>
                     </div>
-
-
                 </div>
             </div>
             <div class="row">
