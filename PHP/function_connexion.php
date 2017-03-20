@@ -44,9 +44,6 @@
 
 	function connexion($inEmail, $inMdp) {
 		global $bdd;
-		$query = null;
-		$sth = $bdd->query($query);
-		$result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
 		$query = "SELECT `mdp` FROM `compte` WHERE `email` = ".$bdd->quote($inEmail);	
 		$sth = $bdd->query($query);
