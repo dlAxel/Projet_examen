@@ -59,13 +59,13 @@ li a:hover:not(.active) {
     margin-left: 100px;
 }
 
-#centerdiv {
+.centerdiv {
     text-align: center;
     margin-right: 500px;
     font-size: 17px;
 }
 
-#table-add-file {
+.table-add-file {
     margin-left: 345px;
 }
 

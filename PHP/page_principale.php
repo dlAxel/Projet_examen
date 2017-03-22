@@ -41,43 +41,29 @@
             <div class="row">
                 <div class="col-lg-offset-3 col-lg-9">
                     <?php
-                        require_once('config.php'); 
-                        recupEvent();    
+                    require_once('../class/DBTool.class.php');
+                    require_once('../class/Event.class.php');
 
-                        function recupEvent() {
-                            global $bdd;
-                            $query = null;
-
-                            $query="SELECT `nom_evenement`, `date_evenement` FROM `evenement`";
-                            $sth = $bdd->query($query);
-                            $data = $sth->fetchAll(PDO::FETCH_ASSOC);
-
-                            $cpt = 0;
-                            foreach ($data as $line) {
-                                echo '<div id="div'.$cpt.'" style="border: 1px solid black; padding: 8px; margin-bottom: 10px; height:150px;" onmouseover="deploy(this)" onmouseout="reploy(this)">'; 
-                                $name = $line['nom_evenement'];
-                                $date = $line['date_evenement'];
-                                echo $name .' le '.strftime('%D/%M/%Y',$date);
-                                echo '</div>';
-                                $cpt++;
-
-                            }
-                        }
-
+                    $tool = new DBTool();
+                    foreach ($tool->getAllEvents() as $event) {
+                        echo '<div id="div' . $event->getId() . '" style="border: 1px solid black; padding: 8px; margin-bottom: 10px; height:150px;" onmouseover="deploy(this)" onmouseout="reploy(this)">';
+                        echo $event->getName() . ' le ' . $event->getDateWithFormat();
+                        echo '</div>';
+                    }
                     ?>
                 </div>
             </div>
         </div>
-<!--régler ce probléme d'affichage--> 
+        <!--régler ce probléme d'affichage--> 
         <script>
             function deploy(indiv3) {
-                indiv=document.getElementById('div0');
-                indiv.style.border='1px solid red';
-                indiv.style.height="100 px";
+                indiv = document.getElementById('div0');
+                indiv.style.border = '1px solid red';
+                indiv.style.height = "100 px";
             }
             function reploy(indiv) {
-                indiv.style.border='1px solid black';
-                indiv.style.height="10 px";
+                indiv.style.border = '1px solid black';
+                indiv.style.height = "10 px";
             }
         </script>
     </body>
