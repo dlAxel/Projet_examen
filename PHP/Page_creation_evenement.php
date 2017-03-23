@@ -101,7 +101,7 @@
                                 <td class="champ-2">
                                     <input type="text" maxlength="2" size="2" name="Heured">
                                     <span>h</span>
-                                    <input type="text" size="2" name="Minuted">
+                                    <input type="text" maxlength="2" size="2" name="Minuted">
                                 </td>
                             </tr>
                             <tr>
@@ -111,7 +111,7 @@
                                 <td class="champ-2">
                                     <input type="text" maxlength="2" size="2" name="Heuref">
                                     <span>h</span>
-                                    <input type="text" size="2" name="Minutef">
+                                    <input type="text" maxlength="2" size="2" name="Minutef">
                                 </td>
                             </tr>
                             <tr>

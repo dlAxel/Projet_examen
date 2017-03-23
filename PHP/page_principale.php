@@ -46,9 +46,28 @@
 
                     $tool = new DBTool();
                     foreach ($tool->getAllEvents() as $event) {
-                        echo '<div id="div' . $event->getId() . '" style="border: 1px solid black; padding: 8px; margin-bottom: 10px; height:150px;" onmouseover="deploy(this)" onmouseout="reploy(this)">';
+                        echo '<div id="div_' . $event->getId() . '" class="small"  onclick="toggleDiv(this)" >';
                         echo $event->getName() . ' le ' . $event->getDateWithFormat();
-                        echo '</div>';
+                        echo '<br>';
+                        echo $event->getAdress1();
+                        echo '<br>';
+                        echo $event->getCity();
+                        echo '<br>';
+                        echo $event->getZipCode();
+                        echo '<br>';
+                        echo $event->getStartHour() . ' fini à '. $event->getEndHour(); 
+                        echo '<br>';
+                        echo $event->getDressCode();
+                        echo '<br>';
+                        echo $event->getList();
+                        echo '<br>';
+                        echo $event->getVisibility();
+                        echo '<br>';
+                        echo $event->getLowAgeAccess();
+                        echo '<br>';
+                        //echo $event->getPosition();
+                        echo '</div>';  
+                        
                     }
                     ?>
                 </div>
@@ -56,15 +75,10 @@
         </div>
         <!--régler ce probléme d'affichage--> 
         <script>
-            function deploy(indiv3) {
-                indiv = document.getElementById('div0');
-                indiv.style.border = '1px solid red';
-                indiv.style.height = "100 px";
+            function toggleDiv(inDiv) {
+                inDiv.classList.toggle('big');
             }
-            function reploy(indiv) {
-                indiv.style.border = '1px solid black';
-                indiv.style.height = "10 px";
-            }
+            
         </script>
     </body>
 </html>

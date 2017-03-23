@@ -24,11 +24,9 @@ require_once('config.php');
         if ($key=='Nom' || $key=='Ville' || $key=='Adresse' || $key=='Liste' || $key=='Tenue' || $key=='CP') {
             $postClone[$key] = filter_var(trim($value),FILTER_SANITIZE_STRING);
         } else if($key=='Jour') {
-
-            $test = intVal($value);
-            if ($test>=1 && $test<=31) {
-                $postClone[$key] = $test;
-            }
+            $details=explode('-',$value);
+            $postClone[$key] = mktime(0, 0, 0, $details[1], $details[2], $details[0]);
+            
         }else if($key=='Heured' || $key=='Heuref') {
 
             $test = intVal($value);
@@ -52,6 +50,7 @@ require_once('config.php');
             }
         }
     }
+
 
     if (empty($postClone)) {
         echo "Veuiller remplir tout les champs";

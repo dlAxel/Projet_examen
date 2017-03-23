@@ -1,7 +1,7 @@
 <?php
 
 require_once('config.php');
-require_once 'Event.class.php';
+require_once ('Event.class.php');
 
 /**
  * Description of DBTool

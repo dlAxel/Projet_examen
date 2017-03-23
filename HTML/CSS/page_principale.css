@@ -81,3 +81,23 @@ a:hover {
 h1 {
     text-align: center;
 }
+
+/*  div {
+    border: 1px dashed blue;
+    padding: 10px;
+    margin-bottom: 50px;
+  }
+  */
+  
+  .small {
+      border: 1px solid black; 
+      padding: 8px;
+      height: 2.2em;
+      overflow: hidden;
+      margin-bottom: 10px;
+  }
+  
+  .big{
+    height: 200px;
+    overflow-y: scroll;
+  }
