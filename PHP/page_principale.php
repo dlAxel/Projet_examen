@@ -10,7 +10,7 @@
 
         <div class="sidebar1">
             <div class="logo">
-                <a class="img-responsive center-block" href="ton_lien.html">
+                <a class="img-responsive center-block" href="page_profil_membre.php">
                     <img src="../HTML/CSS/default.png" class="img-responsive center-block" alt="Logo">
                 </a>
             </div>
@@ -21,7 +21,6 @@
                     <li><a href="page_principale.php">Accueil</a></li>
                     <li><a href="Page_creation_evenement.php">Créer un évènement</a></li>
                     <li><a href="page_Map.php">Google map</a></li>
-                    <li><a href="page_ami.php">Amis</a></li>
                     <li><a href="page_profil_membre.php">Profil</a></li>
                     <li><a href="#">Guide d'utilisation</a></li>
                 </ul>

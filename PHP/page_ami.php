@@ -11,7 +11,7 @@
 
         <div class="sidebar1">
             <div class="logo">
-                <a class="img-responsive center-block" href="ton_lien.html">
+                <a class="img-responsive center-block" href="page_profil_membre.php">
                     <img src="../HTML/CSS/default.png" class="img-responsive center-block" alt="Logo">
                 </a>
             </div>
@@ -22,7 +22,6 @@
                     <li><a href="page_principale.php">Accueil</a></li>
                     <li><a href="Page_creation_evenement.php">Créer un évènement</a></li>
                     <li><a href="page_Map.php">Google map</a></li>
-                    <li><a href="page_ami.php">Amis</a></li>
                     <li><a href="page_profil_membre.php">Profil</a></li>
                     <li><a href="#">Guide d'utilisation</a></li>
                 </ul>
@@ -33,9 +32,16 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container fluid">
             <div class="row">
-
+                <div class="col-lg-offset-6 col-lg-6">
+                    <h1>Liste d'amis</h1> 
+                </div>
+                <div class="row">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <input type="search" placeholder="Entrez un mot-clef" name="the_search">
+                    </div>
+                </div>
             </div>
         </div>
     </body>

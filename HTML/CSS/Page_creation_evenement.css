@@ -126,6 +126,11 @@ table {
     border-radius: 100%;
 }
 
+.chkbox {
+    display: none;
+    border-style: solid 1px;
+}
+
 @media screen and (max-width: 768px) {
       
    }

@@ -23,9 +23,8 @@
                         <li><a href="page_principale.php">Accueil</a></li>
                         <li><a href="Page_creation_evenement.php">Créer un évènement</a></li>
                         <li><a href="page_Map.php">Google map</a></li>
-                        <li><a href="#">Amis</a></li>
                         <li><a href="page_profil_membre.php">Profil</a></li>
-                        <li><a href="#">Art Class</a></li>
+                        <li><a href="#">zbeub</a></li>
                     </ul>
 
                     <br>

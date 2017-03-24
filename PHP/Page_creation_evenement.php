@@ -5,13 +5,14 @@
         <link rel="stylesheet" type="text/css" href="../Vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../HTML/CSS/Page_creation_evenement.css">
         <title>Page principale</title>
+       
     </head>
     <body>
 
 
         <div class="sidebar1">
             <div class="logo">
-                <a class="img-responsive center-block" href="ton_lien.html">
+                <a class="img-responsive center-block" href="page_profil_membre.php">
                     <img src="../HTML/CSS/default.png" class="img-responsive center-block" alt="Logo">
                 </a>
             </div>
@@ -22,7 +23,6 @@
                     <li><a href="page_principale.php">Accueil</a></li>
                     <li><a href="Page_creation_evenement.php">Créer un évènement</a></li>
                     <li><a href="page_Map.php">Google map</a></li>
-                    <li><a href="page_ami.php">Amis</a></li>
                     <li><a href="page_profil_membre.php">Profil</a></li>
                     <li><a href="#">Guide d'utilisation</a></li>
                 </ul>
@@ -133,7 +133,7 @@
                                     Visibilité :
                                 </td>
                                 <td class="champ-2">    
-                                    <select name="Type">
+                                    <select name="Type" onchange="changement(this)">
                                         <option value="1">Public</option>
                                         <option value="0">Privé</option>
                                     </select>
@@ -152,6 +152,12 @@
                     <div class="col-lg-12 center">
                         <p>Tenue requise : </p>
                         <textarea name="Tenue"rows="4" cols="50"></textarea>                     
+                    </div>
+                    <div class="col-lg-offset-2 col-lg-10" style="display:none">
+                        <input type="checkbox" id="chkbox" class="chkbox" name="chkbox" />
+                         <?php
+            require_once('function_recupUtilisateur.php');
+        ?>
                     </div>
                 </div>
 
@@ -196,7 +202,18 @@
                 document.getElementById('lat').value = location.lat();
                 document.getElementById('lon').value = location.lng();
             }
+            
+            function changement(inSelect) {
 
+                if (inSelect.options[inSelect.selectedIndex].value=== "0") {
+                    document.getElementById("chkbox").style.display='block';
+                }
+
+               // var chkbox = document.getElementById("chkbox").value;
+               // document.getElementById("demo").innerHTML +;
+            }
+
+            
         </script>
 
         <script async defer
