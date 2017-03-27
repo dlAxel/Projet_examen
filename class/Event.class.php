@@ -46,7 +46,7 @@ class Event {
     public function getId() {
         return $this->id;
     }
-    
+
     public function getName() {
         return ucfirst(strtolower($this->name));
     }
@@ -79,10 +79,10 @@ class Event {
         return $this->endHour;
     }
 
-    public function getDateWithFormat($inFormat='%d/%m/%Y') {
+    public function getDateWithFormat($inFormat = '%d/%m/%Y') {
         return strftime($inFormat, $this->getDate());
     }
-    
+
     public function getDate() {
         return $this->date;
     }
@@ -194,7 +194,7 @@ class Event {
         $this->visibility = boolval($inDataLine['public_prive']);
         $this->lowAgeAccess = boolval($inDataLine['mineur_autorisee']);
         $this->position = new Position($inDataLine['lat'], $inDataLine['lng']);
-        
+
         return $this;
     }
 

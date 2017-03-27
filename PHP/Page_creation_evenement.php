@@ -4,11 +4,9 @@
         <meta charset='utf-8'>
         <link rel="stylesheet" type="text/css" href="../Vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../HTML/CSS/Page_creation_evenement.css">
-        <title>Page principale</title>
-       
+        <title>Page principale</title>   
     </head>
     <body>
-
 
         <div class="sidebar1">
             <div class="logo">
@@ -155,9 +153,9 @@
                     </div>
                     <div class="col-lg-offset-2 col-lg-10" style="display:none">
                         <input type="checkbox" id="chkbox" class="chkbox" name="chkbox" />
-                         <?php
-            require_once('function_recupUtilisateur.php');
-        ?>
+                        <?php
+                        require_once('function_recupUtilisateur.php');
+                        ?>
                     </div>
                 </div>
 
@@ -202,18 +200,17 @@
                 document.getElementById('lat').value = location.lat();
                 document.getElementById('lon').value = location.lng();
             }
-            
+
             function changement(inSelect) {
 
-                if (inSelect.options[inSelect.selectedIndex].value=== "0") {
-                    document.getElementById("chkbox").style.display='block';
+                if (inSelect.options[inSelect.selectedIndex].value === "0") {
+                    document.getElementById("chkbox").style.display = 'block';
                 }
 
-               // var chkbox = document.getElementById("chkbox").value;
-               // document.getElementById("demo").innerHTML +;
+                // var chkbox = document.getElementById("chkbox").value;
+                // document.getElementById("demo").innerHTML +;
             }
 
-            
         </script>
 
         <script async defer

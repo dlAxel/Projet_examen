@@ -22,10 +22,12 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     height: 100%;
+    background-size: cover;
+    text-align: center;
+    font-family: "LinLibertine_RB";
 }
 .error {
     color: red;
-    border:1px solid red;
     display: none;
 }
 ul {
@@ -59,4 +61,8 @@ li a:hover:not(.active) {
 .w3-container {
     text-align: center;
     font-family: "LinLibertine_RB";
+}
+
+a {
+    color:white;
 }

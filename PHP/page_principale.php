@@ -54,7 +54,7 @@
                         echo '<br>';
                         echo $event->getZipCode();
                         echo '<br>';
-                        echo $event->getStartHour() . ' fini à '. $event->getEndHour(); 
+                        echo $event->getStartHour() . ' fini à ' . $event->getEndHour();
                         echo '<br>';
                         echo $event->getDressCode();
                         echo '<br>';
@@ -65,8 +65,7 @@
                         echo $event->getLowAgeAccess();
                         echo '<br>';
                         //echo $event->getPosition();
-                        echo '</div>';  
-                        
+                        echo '</div>';
                     }
                     ?>
                 </div>
@@ -77,7 +76,7 @@
             function toggleDiv(inDiv) {
                 inDiv.classList.toggle('big');
             }
-            
+
         </script>
     </body>
 </html>

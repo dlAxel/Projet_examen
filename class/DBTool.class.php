@@ -20,19 +20,18 @@ class DBTool {
         $query = null;
 
         $today = mktime(0, 0, 0, date('n'), date('j'), date('Y'));
-        $query = "SELECT * FROM `evenement` WHERE date_evenement>=".$today;
+        $query = "SELECT * FROM `evenement` WHERE date_evenement>=" . $today;
         $sth = $bdd->query($query);
         $data = $sth->fetchAll(PDO::FETCH_ASSOC);
 
         $allEvents = [];
         foreach ($data as $line) {
-           $event = new Event();
-           $allEvents[] = $event->fillWithDBData($line);
+            $event = new Event();
+            $allEvents[] = $event->fillWithDBData($line);
         }
         return $allEvents;
     }
 
-  
     /**
      * Connect to Mysql Database
      * @return \PDO database PDO object

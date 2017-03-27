@@ -69,7 +69,10 @@ li a:hover:not(.active) {
     margin-left: 345px;
 }
 
-@media screen and (max-height: 450px) {
+@media screen and (min-height: 1362px) {
+    .centerdiv {text-align: center;}
+
     .centerdiv {padding-top: 15px;}
     .centerdiv a {font-size: 18px;}
+    h1 {padding-right: 500px;}
 }

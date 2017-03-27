@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "LinLibertine_RB";
+    src: url(LinLibertine_RB.ttf);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+    background-color: 
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 17px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #e60000;
+}
+
+.active {
+    background-color: #ff0000;

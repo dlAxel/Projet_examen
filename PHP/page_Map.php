@@ -9,7 +9,7 @@
     </head>
 
     <body>
-    <div class="sidebar1">
+        <div class="sidebar1">
             <div class="logo">
                 <a class="img-responsive center-block" href="ton_lien.html">
                     <img src="../HTML/CSS/default.png" class="img-responsive center-block" alt="Logo">
@@ -35,45 +35,45 @@
         <div class="container-fluid">
             <div class="row">
                 <div id="map" class="map"></div>
-        </div>
+            </div>
     </body>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    var map;
-    var mrk;
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: 46.316584181822186, lng: 2.63671875},
-            zoom: 8
-        });
-        google.maps.event.addListener(map, 'click', function (event) {
-            placeMarker(event.latLng);
-        });
-    }
-
-
-
-    function placeMarker(location) {
-        if (!mrk) {
-            mrk = new google.maps.Marker({
-                position: location,
-                map: map
+        var map;
+        var mrk;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 46.316584181822186, lng: 2.63671875},
+                zoom: 8
             });
-
-        } else {
-            mrk.setPosition(location);
-
+            google.maps.event.addListener(map, 'click', function (event) {
+                placeMarker(event.latLng);
+            });
         }
-        map.panTo(location);
-        document.getElementById('lat').value = location.lat();
-        document.getElementById('lon').value = location.lng();
-    }
 
-</script>
 
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv3-DsvBZbXoplCVec9-FzFGd2XEbhtrA&callback=initMap">
-</script>
+
+        function placeMarker(location) {
+            if (!mrk) {
+                mrk = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+
+            } else {
+                mrk.setPosition(location);
+
+            }
+            map.panTo(location);
+            document.getElementById('lat').value = location.lat();
+            document.getElementById('lon').value = location.lng();
+        }
+
+    </script>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv3-DsvBZbXoplCVec9-FzFGd2XEbhtrA&callback=initMap">
+    </script>
 
 </html>
