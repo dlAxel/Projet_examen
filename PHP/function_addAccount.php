@@ -2,6 +2,7 @@
 
 include('config.php');
 
+
 $name = ucfirst(strtolower($_POST['nom'])) . " " . ucfirst(strtolower($_POST['prenom']));
 
 if (empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['email']) || empty($_POST['mdp']) || empty($_POST['confirmMdp'])) {
@@ -27,14 +28,17 @@ if ($_POST['mdp'] == $_POST['confirmMdp']) {
     exit(0);
 }
 
+echo "99";
+
 function createAccount($inLName, $inFName, $inMail, $inPassword) {
     global $bdd;
     $query = null;
-
-    $hash = password_hash($inPassword, PASSWORD_BCRYPT);
-    $query = "INSERT INTO `compte`(`nom`, `prenom`, `email`, `mdp`) VALUES (" . $bdd->quote($inLName) . ", " . $bdd->quote($inFName) . ", " . $bdd->quote($inMail) . ", " . $bdd->quote($hash) . ")";
-
-    $bdd->exec($query);
-    //header("Location: ../HTML/page_connexion.html");
-    exit(0);
+    try {
+        $hash = password_hash($inPassword, PASSWORD_BCRYPT);
+        $query = "INSERT INTO `compte`(`nom`, `prenom`, `email`, `mdp`) VALUES (" . $bdd->quote($inLName) . ", " . $bdd->quote($inFName) . ", " . $bdd->quote($inMail) . ", " . $bdd->quote($hash) . ")";
+        echo $query;
+        $bdd->exec($query);
+    } catch (Exception $ex) {
+        echo $ex->getMessage();
+    }
 }

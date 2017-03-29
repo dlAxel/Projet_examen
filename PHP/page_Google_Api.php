@@ -1,3 +1,4 @@
+<?php include_once('validConnection.inc.php'); ?>
 <!doctype html>
 <html>
     <head>
