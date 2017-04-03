@@ -2,10 +2,11 @@
 <html>
     <head>
         <meta charset='utf-8'>
-        <link rel="stylesheet" type="text/css" href="CSS/Page_connexion.css">
-        <title>Page de connexion</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../Vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="CSS/Page_connexion.css">
         <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+        <title>Page de connexion</title>
 
     </head>
     <body>
@@ -16,69 +17,86 @@
             <li><a href="Page_CGU.html">CGU</a></li>
             <li style="float:right"><a class="active" href="A_propos.html">A propos</a></li>
         </ul>
-        <h1 class="h1">Veuillez vous Connecter !</h1>
+        <h1>Veuillez vous Connecter !</h1>
 
         <form action="" method="POST">
-            <div class="centerdiv">
-                <table class="table-add-file">
 
-                    <tr class="align">
-                        <td class="form-add-user"> <label for="email">Email : </label> </td>
-                        <td>
-                            <input type="text" id="email" name="email" placeholder="Entrez votre mail"/><br>
-                        </td>
-                    </tr>
-
-                    <tr class="align">
-                        <td class="form-add-user"> <label for="mot de passe">Mot de passe : </label> </td>
-                        <td>
-                            <input type="password" id="mdp" name="mdp" placeholder="Entrez votre mot de passe"/><br>
-                        </td>
-                        <a href="../mail.php">Mot de passe oublier ? cliquer ici pour réinitialiser votre mot de passe</a>
-                    </tr>
-                </table>
-
-            </div>
             <div class="w3-container">
+                <div class="">
+                    <div class="row">
+
+
+                        <div class="col-lg-6 col-xs-6 align-right">
+                            Email : 
+
+                        </div>
+
+                        <div class="col-lg-6 col-xs-6 align-left">
+                            <input type="text" id="email" name="email" placeholder="Entrez votre mail"/>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-lg-6 col-xs-6 align-right"> 
+
+                                Mot de passe : 
+                            </div>
+                        
+                        <div class="col-lg-6 col-xs-6 align-left">
+                            <input type="password" id="mdp" name="mdp" placeholder="Entrez votre mot de passe"/>
+                        </div>
+
+                        </div>
+                        
+                            <div class="row">
+                                <a href="../mail.php">Mot de passe oublier ? cliquer ici pour réinitialiser votre mot de passe</a>
+                            </div>
+                        
+
+                    </div>
+                </div>
+
                 <div id="result" class='error'></div>
-                <button class="w3-btn w3-hover-red" input type="button" name="connexion" onclick="connexionAjax()" >Connexion</button>
+                <button class="w3-btn w3-hover-red" type="button" name="connexion" onclick="connexionAjax()" >Connexion</button>
 
-                <a href="Page_daccueil.html">
-                    <button class="w3-btn w3-hover-red" input type="button" name="inscription" >Annuler</button></a>
-                <script>
+                <a href="../index.html">
+                    <button class="w3-btn w3-hover-red" type="button" name="deconnexion" >Annuler</button></a>
+            </div>
+        </form>
+        <script>
 
-                    function connexionAjax() {
+            function connexionAjax() {
 
-                        var email = document.getElementById("email").value;
-                        var pass = document.getElementById("mdp").value;
+                var email = document.getElementById("email").value;
+                var pass = document.getElementById("mdp").value;
 
-                        var xhttp = new XMLHttpRequest();
+                var xhttp = new XMLHttpRequest();
 
-                        xhttp.onreadystatechange = function () {
-                            if (this.readyState == 4 && this.status == 200) {
-                                var result = JSON.parse(this.responseText);
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var result = JSON.parse(this.responseText);
 
-                                var err = parseInt(result.err, 10);
-                                if (err > 0) {
-                                    document.getElementById("result").innerHTML = result.message;
-                                    document.getElementById("result").style.display = 'block';
-                                } else {
-                                    window.location.href = "../PHP/page_principale.php";
-                                }
-
-
-                            }
-                        };
-
-                        if (pass == pass && email == email) {
-
-                            xhttp.open("POST", "../PHP/function_connexion.php", true);
-                            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                            xhttp.send("&email=" + email + "&mdp=" + pass);
+                        var err = parseInt(result.err, 10);
+                        if (err > 0) {
+                            document.getElementById("result").innerHTML = result.message;
+                            document.getElementById("result").style.display = 'block';
+                        } else {
+                            window.location.href = "../PHP/page_principale.php";
                         }
 
+
                     }
-                </script>
-            </div>
+                };
+
+                if (pass == pass && email == email) {
+
+                    xhttp.open("POST", "../PHP/function_connexion.php", true);
+                    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhttp.send("&email=" + email + "&mdp=" + pass);
+                }
+
+            }
+        </script>
+
     </body>
 </html>

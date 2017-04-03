@@ -1,8 +1,12 @@
-.table-add-file {
-    margin-left: 450px;
-    text-align: center;
-    font-family: "LinLibertine_RB";
+.align-right {
+    text-align: right;
+    
     color: white;
+}
+
+.align-left {
+    text-align: left;
+    margin-bottom: 2px;
 }
 
 h1 {
@@ -23,7 +27,6 @@ body {
     background-position: center;
     height: 100%;
     background-size: cover;
-    text-align: center;
     font-family: "LinLibertine_RB";
 }
 .error {
@@ -52,6 +55,7 @@ li a {
 
 li a:hover:not(.active) {
     background-color: #e60000;
+    text-decoration: none;
 }
 
 .active {
@@ -64,5 +68,5 @@ li a:hover:not(.active) {
 }
 
 a {
-    color:white;
+    color: white;
 }

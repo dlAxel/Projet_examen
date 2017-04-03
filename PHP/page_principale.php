@@ -15,7 +15,6 @@
                     <img src="../HTML/CSS/default.png" class="img-responsive center-block" alt="Logo">
                 </a>
             </div>
-            <br>
             <div class="left-navigation">
                 <ul class="list">
                     <h5><strong>Menu</strong></h5>
@@ -27,7 +26,6 @@
                     <li><a href="#">Guide d'utilisation</a></li>
                 </ul>
 
-                <br>
                 <div class="bouton">
                     <a href="deconnexion.php" class="button" type="submit">Déconnexion</a>
                 </div>

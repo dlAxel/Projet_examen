@@ -11,7 +11,7 @@
     <body>
         <div class="sidebar1">
             <div class="logo">
-                <a class="img-responsive center-block" href="ton_lien.html">
+                <a class="img-responsive center-block">
                     <img src="../HTML/CSS/default.png" class="img-responsive center-block" alt="Logo">
                 </a>
             </div>
@@ -23,6 +23,7 @@
                     <li><a href="Page_creation_evenement.php">Créer un évènement</a></li>
                     <li><a href="page_Map.php">Google map</a></li>
                     <li><a href="page_profil_membre.php">Profil</a></li>
+                    <li><a href="page_ami.php">Amis</a></li>
                     <li><a href="#">Guide d'utilisation</a></li>
                 </ul>
 
@@ -32,10 +33,13 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container fluid">
             <div class="row">
-                <div id="map" class="map"></div>
+                <div class="col-lg-offset-2 col-lg-10">
+                    <div id="map" class="map"></div>
+                </div>
             </div>
+        </div>
     </body>
 
     <script type="text/javascript">

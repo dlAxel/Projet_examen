@@ -81,7 +81,7 @@ if (isset($_REQUEST['invit_token'])) {
 
             <div class="w3-container">
                 <button class="w3-btn w3-hover-red" input type="button" name="connexion" onclick="addAccountAjax()">Valider</button>
-                <a href="../HTML/Page_daccueil.html">
+                <a href="../index.html">
                     <button class="w3-btn w3-hover-red" input type="button" name="inscription"  >Annuler</button></a>
         </form>
     </div>

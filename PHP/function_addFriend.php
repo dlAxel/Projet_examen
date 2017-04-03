@@ -16,7 +16,7 @@ session_start();
 session_write_close();
 
 
-$invit = utf8_decode(uniqid());
+$invit = base64_encode(uniqid());
 $from = getUserIdFromSession($_SESSION['token']);
 //$from = getUserIdFromMail($_REQUEST['email']);
 addInviToDb($from, $_REQUEST['email'], $invit);
@@ -27,7 +27,7 @@ require_once '../MailerPHP/vendor/PHPMailer/PHPMailerAutoload.php';
 
 $from = "MyEvent";
 $exp = 'myevent.organiser@gmail.com';
-$pass = '';
+$pass = 'Adminmyevent';
 $dests[] = $_REQUEST['email'];
 $destsBcc = ['dl_aznar@mode83.net'];
 
@@ -43,7 +43,7 @@ $mail->Username = $exp;
 $mail->Password = $pass;
 $mail->SetFrom($exp, $from);
 $mail->Subject = "Invitation au site";
-$mail->Body = "Bonjour, <br><br>" . $_REQUEST['nom'] . " vous avez été invité. Merci de cliquer sur le lien ci-dessous:<br><a href=\"".$invitLink.'">Voir mon invitation</a>';
+$mail->Body = utf8_decode("Bonjour, <br><br>" . $_REQUEST['nom'] . " vous avez été invité. Merci de cliquer sur le lien ci-dessous:<br><a href=\"".$invitLink.'">Voir mon invitation</a>');
 
 
 

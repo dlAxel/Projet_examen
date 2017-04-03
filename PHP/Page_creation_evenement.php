@@ -21,7 +21,7 @@
                     <li><a href="page_principale.php">Accueil</a></li>
                     <li><a href="Page_creation_evenement.php">Créer un évènement</a></li>
                     <li><a href="page_Map.php">Google map</a></li>
-                    <li><a href="page_profil_membre.php">Profil</a></li>
+                    <li><a href="page_ami.php">Amis</a></li>
                     <li><a href="#">Guide d'utilisation</a></li>
                 </ul>
 
@@ -161,6 +161,7 @@
 
                 <div class="col-lg-5">
                     <div id="map" class="map"> </div>
+                    <p>Veuiller indiquer l'endroit de l'événement en cliquant sur la carte </p>
                 </div>
                 <div class="col-lg-offset-2 col-lg-10 center">
                     <button type="submit" class="btn btn-success">Envoyer</button>

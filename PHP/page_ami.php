@@ -18,7 +18,7 @@ if (empty(session_id())) {
 
         <div class="sidebar1">
             <div class="logo">
-                <a class="img-responsive center-block" href="page_profil_membre.php">
+                <a class="img-responsive center-block">
                     <img src="../HTML/CSS/default.png" class="img-responsive center-block" alt="Logo">
                 </a>
             </div>
@@ -31,6 +31,7 @@ if (empty(session_id())) {
                     <li><a href="page_Map.php">Google map</a></li>
                     <li><a href="page_profil_membre.php">Profil</a></li>
                     <li><a href="page_ami.php">Amis</a></li>
+                    <li><a href="#">Guide d'utilisation</a></li>
                 </ul>
 
                 <br>
