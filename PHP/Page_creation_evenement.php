@@ -5,6 +5,20 @@
         <link rel="stylesheet" type="text/css" href="../Vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../HTML/CSS/Page_creation_evenement.css">
         <title>Page principale</title>   
+
+        <script>
+            function showFriendsZone(inSelect) {
+
+                if (inSelect.options[inSelect.selectedIndex].value === "0") {
+                    document.getElementById("friendzone").style.display = 'block';
+                } else {
+                    document.getElementById("friendzone").style.display = 'none';
+                }
+
+                // var chkbox = document.getElementById("chkbox").value;
+                // document.getElementById("demo").innerHTML +;
+            }
+        </script>
     </head>
     <body>
 
@@ -22,10 +36,10 @@
                     <li><a href="Page_creation_evenement.php">Créer un évènement</a></li>
                     <li><a href="page_Map.php">Google map</a></li>
                     <li><a href="page_ami.php">Amis</a></li>
+                    <li><a href="Page_invit_evenement_prive.php">Invitation événement privé</a></li>
                     <li><a href="#">Guide d'utilisation</a></li>
                 </ul>
 
-                <br>
                	<div class="bouton">
                     <a href="deconnexion.php" class="button">Déconnexion</a>
                 </div>
@@ -131,7 +145,7 @@
                                     Visibilité :
                                 </td>
                                 <td class="champ-2">    
-                                    <select name="Type" onchange="changement(this)">
+                                    <select name="Type" onchange="showFriendsZone(this)">
                                         <option value="1">Public</option>
                                         <option value="0">Privé</option>
                                     </select>
@@ -151,12 +165,28 @@
                         <p>Tenue requise : </p>
                         <textarea name="Tenue"rows="4" cols="50"></textarea>                     
                     </div>
-                    <div class="col-lg-offset-2 col-lg-10" style="display:none">
-                        <input type="checkbox" id="chkbox" class="chkbox" name="chkbox" />
-                        <?php
-                        require_once('function_recupUtilisateur.php');
-                        ?>
+                    <div class="col-lg-12 center" style="display: none;" id="friendzone">
+                        <p>Amis : </p>
+                        <div style="margin-left:50px;text-align:left;">
+                            <?php
+                            require_once('config.php');
+                            global $bdd;
+
+                            $query = 'SELECT `ami_to` FROM `amis` WHERE `ami_from`=1';
+                            $sth = $bdd->query($query);
+                            $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+                            // var_dump($result);
+                            $i=0;
+                            foreach ($result as $infos) {
+                                $friend = $infos['ami_to'];
+                                echo ' <input type="checkbox" name="friends_cb_'.$i.'" value="' . $friend . '"> ' . $friend . '<br>';
+                                $i++;
+                            }
+                            ?>
+                        </div>                  
                     </div>
+
                 </div>
 
                 <div class="col-lg-5">
@@ -202,15 +232,7 @@
                 document.getElementById('lon').value = location.lng();
             }
 
-            function changement(inSelect) {
 
-                if (inSelect.options[inSelect.selectedIndex].value === "0") {
-                    document.getElementById("chkbox").style.display = 'block';
-                }
-
-                // var chkbox = document.getElementById("chkbox").value;
-                // document.getElementById("demo").innerHTML +;
-            }
 
         </script>
 

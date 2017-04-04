@@ -47,8 +47,13 @@
     padding-left: 35px;
 }
 
-.main-content{
-text-align:center;
+.img-responsive .center-block {
+    border-radius: 100%;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
 }
 
 .bouton {
@@ -66,69 +71,8 @@ text-align:center;
 .bouton a{
     color: white;
     text-decoration: none;
- }
+    }
 
 a {
     color: white;
 }
-
-a:hover {
-    text-decoration: none;
-    color: white;
-}
-
-.titre {
-    text-align: center !important;
-}
-
-h2 {
-    text-align: center;
-    padding-bottom: 0 auto;
-}
-
-.center {
-    text-align: center;
-}
-
-.btn-success {
-    text-align: center;
-}
-
-.text {
-    text-align: right;
-}
-
-.champ {
-    text-align: left;
-    padding: 2px;
-}
-
-.text-2 {
-    text-align: right;
-}
-
-.champ-2 {
-    text-align: left;
-    padding: 2px;
-}
-
-table {
-    width: 100%;
-}
-
-.map {
-    height: 250px;
-    width: 70%;
-}
-
-.img-responsive .center-block {
-    border-radius: 100%;
-}
-
-.chkbox {
-    border-style: solid 1px;
-}
-
-@media screen and (max-width: 768px) {
-      
-   }

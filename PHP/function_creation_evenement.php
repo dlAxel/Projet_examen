@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * Friends in request:
+ * ["friends_cb_0"]=> string(19) "dl_aznar@mode83.net" 
+ * 
+ */
+
 /* We intialize to clear variable */
 
 require_once('config.php');
@@ -53,11 +59,15 @@ foreach ($_POST as $key => $value) {
 
 if (empty($postClone)) {
     echo "Veuiller remplir tout les champs";
+    die();
 }
 
 /* Call the function to save the form into DB */
 
-envoie($postClone);
+$eventid = envoie($postClone);
+saveEventGuests($_REQUEST, $eventId);
+
+header('Location: page_principale.php');
 
 function envoie($inPostClone) {
     global $bdd;
@@ -78,10 +88,33 @@ function envoie($inPostClone) {
     $query .= $inPostClone['Type'] . ',';
     $query .= $bdd->quote($inPostClone['Liste']) . ',';
     $query .= $bdd->quote($inPostClone['Tenue']) . ',';
-    $query .= $inPostClone['lat'] . ',';
-    $query .= $inPostClone['lon'];
+    $query .= $inPostClone['lon'] . ',';
+    $query .= $inPostClone['lat'];
     $query .= ')';
 
+    
     $bdd->exec($query);
-    header('Location: page_principale.php');
+
+    return $bdd->lastInsertId();
+}
+
+// ["friends_cb_0"]=> string(19) "dl_aznar@mode83.net" 
+function saveEventGuests($inRequest, $inEventId) {
+    global $bdd;
+    $query = null;
+
+    try {
+        foreach ($inRequest as $key => $value) {
+            if (strpos($key, 'friends_cb_') !== false) {
+                // guest found, add it
+                $query = 'INSERT INTO `evenement_prive`(`event_id`, `guest_mail`) VALUES (';
+                $query .= $inEventId . ', ';
+                $query .= $bdd->quote($value) . ')';
+                error_log(__FILE__ . ' ' . __FUNCTION__ . ' ' . $query);
+                $bdd->exec($query);
+            }
+        }
+    } catch (Exception $ex) {
+         error_log(__FILE__ . ' ' . __FUNCTION__ . ' ' . $ex->getMessage());
+    }
 }

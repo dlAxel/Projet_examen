@@ -21,8 +21,8 @@
                     <li><a href="page_principale.php">Accueil</a></li>
                     <li><a href="Page_creation_evenement.php">Créer un évènement</a></li>
                     <li><a href="page_Map.php">Google map</a></li>
-                    <li><a href="page_profil_membre.php">Profil</a></li>
                     <li><a href="page_ami.php">Amis</a></li>
+                    <li><a href="Page_invit_evenement_prive.php">Invitation événement privé</a></li>
                     <li><a href="#">Guide d'utilisation</a></li>
                 </ul>
 
@@ -44,7 +44,7 @@
                     require_once('../class/Event.class.php');
 
                     $tool = new DBTool();
-                    foreach ($tool->getAllEvents() as $event) {
+                    foreach ($tool->getAllEvents(1) as $event) {
                         echo '<div id="div_' . $event->getId() . '" class="small"  onclick="toggleDiv(this)" >';
                         echo $event->getName() . ' le ' . $event->getDateWithFormat();
                         echo '<br>';
