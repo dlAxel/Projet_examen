@@ -1,4 +1,18 @@
+html,body,.container {
+    height:100%;
+    border: 0;
+    padding: 0;
+}
+
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
 .sidebar1 {
+    border: 0;
+    padding: 0;
     background: #F17153;
     /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(#808080, #808080, #808080);
@@ -8,14 +22,12 @@
     background: -moz-linear-gradient(#808080, #808080, #808080);
     /* For Firefox 3.6 to 15 */
     background: linear-gradient(#808080, #808080, #808080);
-    /* Standard syntax */
-    padding: 0px;
-    position: absolute;
-    width: 20%;
-    height: 100%;
-    top: 0;
-    left: 0;
 }
+
+.full-height {
+    height: 100%;
+}
+
 .logo {
     max-height: 130px;
     border-radius: 100%;
@@ -118,17 +130,9 @@ table {
 
 .map {
     height: 250px;
-    width: 70%;
 }
 
 .img-responsive .center-block {
     border-radius: 100%;
 }
 
-.chkbox {
-    border-style: solid 1px;
-}
-
-@media screen and (max-width: 768px) {
-      
-   }

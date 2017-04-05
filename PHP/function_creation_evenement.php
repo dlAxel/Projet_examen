@@ -64,7 +64,8 @@ if (empty($postClone)) {
 
 /* Call the function to save the form into DB */
 
-$eventid = envoie($postClone);
+$eventId = envoie($postClone);
+// var_dump($eventid);
 saveEventGuests($_REQUEST, $eventId);
 
 header('Location: page_principale.php');
@@ -91,8 +92,10 @@ function envoie($inPostClone) {
     $query .= $inPostClone['lon'] . ',';
     $query .= $inPostClone['lat'];
     $query .= ')';
+//    echo(__FILE__ . ' ' . __FUNCTION__ . ' <br>' . $query);
+//
+//    error_log(__FILE__ . ' ' . __FUNCTION__ . ' ' . $query);
 
-    
     $bdd->exec($query);
 
     return $bdd->lastInsertId();
@@ -110,11 +113,11 @@ function saveEventGuests($inRequest, $inEventId) {
                 $query = 'INSERT INTO `evenement_prive`(`event_id`, `guest_mail`) VALUES (';
                 $query .= $inEventId . ', ';
                 $query .= $bdd->quote($value) . ')';
-                error_log(__FILE__ . ' ' . __FUNCTION__ . ' ' . $query);
+
                 $bdd->exec($query);
             }
         }
     } catch (Exception $ex) {
-         error_log(__FILE__ . ' ' . __FUNCTION__ . ' ' . $ex->getMessage());
+        error_log(__FILE__ . ' ' . __FUNCTION__ . ' ' . $ex->getMessage());
     }
 }

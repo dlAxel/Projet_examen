@@ -2,6 +2,6 @@
 
 session_start();
 session_destroy();
-header('location: ../HTML/index.html');
+header('location: ../index.html');
 exit;
 ?>

@@ -1,3 +1,4 @@
+<?php include_once('validConnection.inc.php'); ?>
 <!doctype html>
 <html>
     <head>
@@ -7,31 +8,67 @@
         <title>Invitation événement privé</title>
     </head>
     <body>
-        <form method="GET">
+        <!--<form method="GET">-->
+        <div class="container-fluid full-height nopadding">
+            <div class="row full-height nopadding">
+                <div class="col-lg-3 col-md-2 col-sm-3 col-xs-5 full-height nopadding">
+                    <?php include 'sideMenu.inc.php'; ?>
+                </div>
 
-        <div class="sidebar1">
-            <div class="logo">
-                <a class="img-responsive center-block">
-                    <img src="../HTML/CSS/default.png" class="img-responsive center-block" alt="Logo">
-                </a>
-            </div>
-    
-            <div class="left-navigation">
-                <ul class="list">
-                    <h5><strong>Menu</strong></h5>
-                    <li><a href="page_principale.php">Accueil</a></li>
-                    <li><a href="Page_creation_evenement.php">Créer un évènement</a></li>
-                    <li><a href="page_Map.php">Google map</a></li>
-                    <li><a href="page_ami.php">Amis</a></li>
-                    <li><a href="Page_invit_evenement_prive.php">Invitation événement privé</a></li>
-                    <li><a href="#">Guide d'utilisation</a></li>
-                </ul>
+                <div class="col-lg-9 col-md-10 col-sm-9 col-xs-7 full-height">
 
-               	<div class="bouton">
-                    <a href="deconnexion.php" class="button" type="submit">Déconnexion</a>
+                    <h1>Voici les évènements privés auxquels vous êtes invités</h1>
+
+                    <?php
+                    require_once '../class/DBTool.class.php';
+                    $tool = new DBTool();
+                    if (empty(session_id())) {
+                        session_start();
+                    }
+
+                    $user = $tool->getUserMailFromSessionToken($_SESSION['token']);
+                    $allEvents = $tool->getAllEventsForUser(0, $user);
+                    if (count($allEvents)) {
+                        foreach ($allEvents as $event) {
+                            echo '<div id="div_' . $event->getId() . '" class="small"  onclick="toggleDiv(this)" >';
+                            echo $event->getName() . ' le ' . $event->getDateWithFormat();
+                            echo '<br>';
+                            echo $event->getAdress1();
+                            echo '<br>';
+                            echo $event->getCity();
+                            echo '<br>';
+                            echo $event->getZipCode();
+                            echo '<br>';
+                            echo $event->getStartHour() . ' fini à ' . $event->getEndHour();
+                            echo '<br>';
+                            echo $event->getDressCode();
+                            echo '<br>';
+                            echo $event->getList();
+                            echo '<br>';
+                            echo $event->getVisibility();
+                            echo '<br>';
+                            if ($event->getLowAgeAccess() == 1) {
+                                echo 'Mineurs autorisés';
+                            }
+                            echo '<br>';
+                            //echo $event->getPosition();
+                            echo '</div>';
+                        }
+                    } else {
+                        echo '<p>Vous n\'êtes invité à aucun évènement.';
+                    }
+                    ?>
+
+
                 </div>
             </div>
         </div>
-        </form>
+        <script>
+            function toggleDiv(inDiv) {
+                inDiv.classList.toggle('big');
+            }
+
+        </script>
+
     </body>
 </html>
