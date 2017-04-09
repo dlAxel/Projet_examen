@@ -6,8 +6,7 @@
         <link rel="stylesheet" type="text/css" href="../Vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="CSS/Page_connexion.css">
         <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-        <title>Page de connexion</title>
-
+        <title>Connexion - MyEvent Organiser</title>
     </head>
     <body>
         <ul>
@@ -17,54 +16,48 @@
             <li><a href="Page_CGU.html">CGU</a></li>
             <li style="float:right"><a class="active" href="A_propos.html">A propos</a></li>
         </ul>
-        <h1>Veuillez vous Connecter !</h1>
 
-        <form action="" method="POST">
+        <div class="container">
+            <div style="background: rgba(255, 255, 255, .5); margin-top: 25px; padding-top: 10px;padding-bottom: 20px;">
+                <h1 class="h1">Connexion</h1>
 
-            <div class="w3-container">
-                <div class="">
-                    <div class="row">
-
-
-                        <div class="col-lg-6 col-xs-6 align-right">
-                            Email : 
-
-                        </div>
-
-                        <div class="col-lg-6 col-xs-6 align-left">
-                            <input type="text" id="email" name="email" placeholder="Entrez votre mail"/>
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-lg-6 col-xs-6 align-right"> 
-
-                                Mot de passe : 
-                            </div>
-                        
-                        <div class="col-lg-6 col-xs-6 align-left">
-                            <input type="password" id="mdp" name="mdp" placeholder="Entrez votre mot de passe"/>
-                        </div>
-
-                        </div>
-                        
+                <form method="POST">
+                    <div class="w3-container">
+                        <div class="">
                             <div class="row">
-                                <a href="../mail.php">Mot de passe oublier ? cliquer ici pour réinitialiser votre mot de passe</a>
+                                <div class="col-lg-6 col-xs-6 align-right">
+                                    Email : 
+                                </div>
+
+                                <div class="col-lg-6 col-xs-6 align-left">
+                                    <input type="text" id="email" name="email" placeholder="Entrez votre mail"/>
+                                </div>
                             </div>
-                        
 
+                            <div class="row">
+                                <div class="col-lg-6 col-xs-6 align-right"> 
+                                    Mot de passe : 
+                                </div>
+
+                                <div class="col-lg-6 col-xs-6 align-left">
+                                    <input type="password" id="mdp" name="mdp" placeholder="Entrez votre mot de passe"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="result" class='error'></div>
+
+                        <button class="w3-btn w3-hover-red" type="button" name="connexion" onclick="connexionAjax()">Connexion</button>
+
+                        <a class="w3-btn w3-hover-red" href="../index.html">
+                            Annuler
+                        </a>
                     </div>
-                </div>
-
-                <div id="result" class='error'></div>
-                <button class="w3-btn w3-hover-red" type="button" name="connexion" onclick="connexionAjax()" >Connexion</button>
-
-                <a href="../index.html">
-                    <button class="w3-btn w3-hover-red" type="button" name="deconnexion" >Annuler</button></a>
+                </form>
             </div>
-        </form>
-        <script>
+        </div>
 
+        <script type="text/javascript">
             function connexionAjax() {
 
                 var email = document.getElementById("email").value;
@@ -94,9 +87,7 @@
                     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                     xhttp.send("&email=" + email + "&mdp=" + pass);
                 }
-
             }
         </script>
-
     </body>
 </html>

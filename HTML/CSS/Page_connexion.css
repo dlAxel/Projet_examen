@@ -1,7 +1,5 @@
 .align-right {
     text-align: right;
-    
-    color: white;
 }
 
 .align-left {
@@ -11,7 +9,6 @@
 
 h1 {
     text-align: center;
-    font-family: "LinLibertine_RB";
     color: white;
 }
 
@@ -64,7 +61,7 @@ li a:hover:not(.active) {
 
 .w3-container {
     text-align: center;
-    font-family: "LinLibertine_RB";
+    color: #000;
 }
 
 a {
