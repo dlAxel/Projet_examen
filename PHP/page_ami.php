@@ -68,7 +68,6 @@ if (empty(session_id())) {
                             }
                         };
 
-
                         xhttp.open("POST", "../PHP/function_addFriend.php", true);
                         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                         xhttp.send("nom=" + encodeURI(name.value) + "&email=" + encodeURI(email.value));

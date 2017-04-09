@@ -2,10 +2,10 @@
 
 /*
  * If user is not connected, redirect.
- * If connection older that 30s, redirect
+ * If connection older that 30min, redirect
  */
 
-$maxTimeInSeconds = 3600;
+$maxTimeInSeconds = 1800;
 
 session_start();
 require_once 'config.php';

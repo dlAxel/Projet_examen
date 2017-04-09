@@ -7,7 +7,7 @@ $name = ucfirst(strtolower($_POST['nom'])) . " " . ucfirst(strtolower($_POST['pr
 
 if (empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['email']) || empty($_POST['mdp']) || empty($_POST['confirmMdp'])) {
 
-    //echo 'Veuillez renseigner tous les champs';
+   /* return an error with Ajax*/
     echo "1";
     exit(0);
 }
@@ -18,18 +18,17 @@ if ($_POST['mdp'] == $_POST['confirmMdp']) {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
     $mdp = filter_var($_POST['mdp'], FILTER_SANITIZE_STRING);
     createAccount($nom, $prenom, $email, $mdp);
-    //echo 'Compte ajouté';
+    
     echo "0";
     exit(0);
 } else {
-
-    //echo 'Veuiller retaper votre mot de passe';
+    
     echo "2";
     exit(0);
 }
 
 echo "99";
-
+/* function allowing to create an account*/
 function createAccount($inLName, $inFName, $inMail, $inPassword) {
     global $bdd;
     $query = null;

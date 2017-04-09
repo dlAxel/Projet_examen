@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Friends in request:
  * ["friends_cb_0"]=> string(19) "dl_aznar@mode83.net" 
@@ -65,7 +64,6 @@ if (empty($postClone)) {
 /* Call the function to save the form into DB */
 
 $eventId = envoie($postClone);
-// var_dump($eventid);
 saveEventGuests($_REQUEST, $eventId);
 
 header('Location: page_principale.php');
@@ -92,16 +90,12 @@ function envoie($inPostClone) {
     $query .= $inPostClone['lon'] . ',';
     $query .= $inPostClone['lat'];
     $query .= ')';
-//    echo(__FILE__ . ' ' . __FUNCTION__ . ' <br>' . $query);
-//
-//    error_log(__FILE__ . ' ' . __FUNCTION__ . ' ' . $query);
 
-    $bdd->exec($query);
+    $ret = $bdd->exec($query);
 
     return $bdd->lastInsertId();
 }
 
-// ["friends_cb_0"]=> string(19) "dl_aznar@mode83.net" 
 function saveEventGuests($inRequest, $inEventId) {
     global $bdd;
     $query = null;

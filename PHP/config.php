@@ -2,7 +2,7 @@
 $bdd = null;
 try {
     // On se connecte à MySQL
-    $bdd = new PDO('mysql:host=localhost;dbname=projet_final;charset=utf8', 'root', 'riejubetaktm');
+    $bdd = new PDO('mysql:host=localhost;dbname=projet_final;charset=utf8', 'root', 'root');
 }
 catch(Exception $e) {
 

@@ -42,10 +42,8 @@ $mail->IsHTML(true);
 $mail->Username = $exp;
 $mail->Password = $pass;
 $mail->SetFrom($exp, $from);
-$mail->Subject = "Invitation au site";
-$mail->Body = utf8_decode("Bonjour, <br><br>" . $_REQUEST['nom'] . " vous avez été invité. Merci de cliquer sur le lien ci-dessous:<br><a href=\"".$invitLink.'">Voir mon invitation</a>');
-
-
+$mail->Subject = "MyEvent Oragniser : Invitation";
+$mail->Body = utf8_decode("Bonjour, <br><br>" . $_REQUEST['nom'] . " vous avez été invité. Merci de cliquer sur le lien ci-dessous :<br><a href=\"".$invitLink.'">Voir mon invitation</a>');
 
 foreach ($dests as $d) {
     $mail->addAddress($d);

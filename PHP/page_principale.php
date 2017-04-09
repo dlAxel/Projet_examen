@@ -19,17 +19,16 @@
         <div class="container-fluid">
             <div class="row">
                 
-                    <h1>Liste d'évènements public</h1>
+                    <h1>Évènements publics</h1>
                 </div>
             </div>
             <div class="row">
-                
                     <?php
                     require_once('../class/DBTool.class.php');
                     require_once('../class/Event.class.php');
 
                     $tool = new DBTool();
-                    foreach ($tool->getAllEvents(1) as $event) {
+                    foreach ($tool->getAllEvents(0) as $event) {
                         echo '<div id="div_' . $event->getId() . '" class="small"  onclick="toggleDiv(this)" >';
                         echo $event->getName() . ' le ' . $event->getDateWithFormat();
                         echo '<br>';

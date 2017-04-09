@@ -2,6 +2,8 @@
 if (empty(session_id())) {
     session_start();
 }
+
+include_once('validConnection.inc.php');
 ?>
 
 <!doctype html>
@@ -160,8 +162,6 @@ if (empty(session_id())) {
                                         require_once '../class/DBTool.class.php';
                                         $tool = new DBTool();
 
-
-
                                         $mail = $tool->getUserMailFromSessionToken($_SESSION['token']);
 
                                         $user = $tool->getAllEventsForUser(0, $mail);
@@ -193,7 +193,7 @@ if (empty(session_id())) {
                             </div>
                             <div class="col-md-6 center">
                                 <div id="map" class="map"> </div>
-                                <p>Veuiller indiquer l'endroit de l'événement en cliquant sur la carte </p>
+                                <p>Veuillez indiquer l'endroit de l'évènement en cliquant sur la carte </p>
                             </div>
                         </div>  <!--end row-->
 
@@ -206,13 +206,7 @@ if (empty(session_id())) {
                         </div>
                     </form>  
                 </div>
-
-
-
-            </div> 
-
-
-
+            </div>
         </div>
         <script type="text/javascript">
 
@@ -220,7 +214,7 @@ if (empty(session_id())) {
             var mrk;
             function initMap() {
                 map = new google.maps.Map(document.getElementById('map'), {
-                    center: {lat: 46.316584181822186, lng: 2.63671875},
+                    center: {lat: 43.5333, lng: 6.4667},
                     zoom: 8
                 });
                 google.maps.event.addListener(map, 'click', function (event) {
@@ -243,8 +237,6 @@ if (empty(session_id())) {
                 document.getElementById('lat').value = location.lat();
                 document.getElementById('lon').value = location.lng();
             }
-
-
 
         </script>
         <script async defer

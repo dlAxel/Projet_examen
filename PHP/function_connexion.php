@@ -45,7 +45,7 @@ exit();
 function connexion($inEmail, $inMdp) {
     global $bdd;
 
-    $query = "SELECT `mdp` FROM `compte` WHERE `email` = " . $bdd->quote($inEmail);
+    $query = "SELECT `email`,`mdp` FROM `compte` WHERE `email` = " . $bdd->quote($inEmail);
     $sth = $bdd->query($query);
     $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
@@ -55,6 +55,7 @@ function connexion($inEmail, $inMdp) {
             // must use something more clever for real world
             $id = base64_encode(time());
             $_SESSION['token'] = $id;
+            $_SESSION['email'] = $result[0]['email'];
             setTokenForUser($inEmail, $id);
 
             session_write_close();
